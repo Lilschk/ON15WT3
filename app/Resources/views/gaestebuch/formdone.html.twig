@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}You're logged in!{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('lib/bootstrap/css/bootstrap.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/application.css') }}">
+
+<body>
+{% include '::navigation.html.twig' %}
+
+
+<div class="container">
+    <div class="page-header">
+        <h1 class="display-1">Gästebuch</h1>
+        <p class="lead page-description">Sie haben eine Nachricht geschrieben.</p>
+        <p> {{  Name }} hat eine Nachricht geschrieben:</p>
+        <p>{{ Mail }}</p>
+        <p>{{ Nachricht }}</p>
+        <p>Dankeschön für Ihren Beitrag!</p>
+    </div>
+</div>
