@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\User;
 use AppBundle\Form\BlogPost;
 use Doctrine\ORM\Query;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -93,10 +94,17 @@ class DefaultController extends Controller
                 'No product found for id '.$Id
             );
         }*/
+        //$em = $this->getDoctrine()->getManager();
+        //$id = $em->lastInsertId();
         return $this->render('gaestebuch/formdone.html.twig', array('Nachricht'=>$Nachricht, 'Mail'=>$Mail, 'Name'=>$Name));
+    }
 
-
-
+    public function showAction(Request $request){
+        $events = $this->getDoctrine()
+            ->getRepository('AppBundle:User')
+            ->findAll();
+        return $this->render('gaestebuch/eintraege.html.twig',array(
+            'events' => $events));
 
     }
 

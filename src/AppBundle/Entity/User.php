@@ -2,11 +2,12 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
 * @ORM\Table(name="app_users")
-* @ORM\Entity(repositoryClass="AppBundle\Entity\UserRepository")
+* @ORM\Entity
 */
 class User implements UserInterface, \Serializable
 {
@@ -22,7 +23,15 @@ private $id;
 */
 private $username;
 
-/**
+
+    /**
+     * @Assert\NotBlank()
+     * @Assert\Length(max=4096)
+     */
+    private $plainPassword;
+
+
+    /**
 * @ORM\Column(type="string", length=64)
 */
 private $password;
@@ -178,5 +187,15 @@ $this->password,
     public function getIsActive()
     {
         return $this->isActive;
+    }
+
+    public function getPlainPassword()
+    {
+        return $this->plainPassword;
+    }
+
+    public function setPlainPassword($password)
+    {
+        $this->plainPassword = $password;
     }
 }

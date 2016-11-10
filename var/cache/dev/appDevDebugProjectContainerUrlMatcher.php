@@ -105,6 +105,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array('_route' => 'logout');
         }
 
+        // user_registration
+        if ($pathinfo === '/register') {
+            return array (  '_controller' => 'AppBundle\\Controller\\RegistrationController::registerAction',  '_route' => 'user_registration',);
+        }
+
         // homepage
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {
@@ -119,15 +124,20 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::guestbookhpAction',  '_route' => 'guestbook_idex',);
         }
 
-        if (0 === strpos($pathinfo, '/log')) {
+        if (0 === strpos($pathinfo, '/login')) {
             // login
             if ($pathinfo === '/login') {
                 return array (  '_controller' => 'AppBundle\\Controller\\SecurityController::loginAction',  '_route' => 'login',);
             }
 
             // guestbook_logged
-            if ($pathinfo === '/loggedin') {
+            if ($pathinfo === '/login/loggedin') {
                 return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::loggedinAction',  '_route' => 'guestbook_logged',);
+            }
+
+            // guestbook_einträgezeigen
+            if ($pathinfo === '/login/showpost') {
+                return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::showAction',  '_route' => 'guestbook_einträgezeigen',);
             }
 
         }

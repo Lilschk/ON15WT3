@@ -15,8 +15,8 @@ class __TwigTemplate_f6e921708ea1c6819b77918003527978ce1765f5f7771b1585e7413d4d6
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_beeba03b8692d4811644d1503625c79e93c67095932818299f8cff58b2fe6db8 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_beeba03b8692d4811644d1503625c79e93c67095932818299f8cff58b2fe6db8->enter($__internal_beeba03b8692d4811644d1503625c79e93c67095932818299f8cff58b2fe6db8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "::sidebar.html.twig"));
+        $__internal_812ab71e84c78a9072db0e52826ec33f8f129862b90ec3c4f7e1449f78681f41 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_812ab71e84c78a9072db0e52826ec33f8f129862b90ec3c4f7e1449f78681f41->enter($__internal_812ab71e84c78a9072db0e52826ec33f8f129862b90ec3c4f7e1449f78681f41_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "::sidebar.html.twig"));
 
         // line 1
         echo "<div class=\"col-sm-3 col-sm-offset-1 page-sidebar\">
@@ -48,7 +48,7 @@ class __TwigTemplate_f6e921708ea1c6819b77918003527978ce1765f5f7771b1585e7413d4d6
     </div>
 </div>";
         
-        $__internal_beeba03b8692d4811644d1503625c79e93c67095932818299f8cff58b2fe6db8->leave($__internal_beeba03b8692d4811644d1503625c79e93c67095932818299f8cff58b2fe6db8_prof);
+        $__internal_812ab71e84c78a9072db0e52826ec33f8f129862b90ec3c4f7e1449f78681f41->leave($__internal_812ab71e84c78a9072db0e52826ec33f8f129862b90ec3c4f7e1449f78681f41_prof);
 
     }
 
