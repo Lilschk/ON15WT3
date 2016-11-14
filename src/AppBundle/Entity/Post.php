@@ -24,6 +24,14 @@ class Post
     private $id;
 
     /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
      * @Assert\NotBlank()
      * @ORM\column(type="string")
      */

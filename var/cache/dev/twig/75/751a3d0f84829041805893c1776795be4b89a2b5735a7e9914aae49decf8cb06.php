@@ -48,7 +48,7 @@ class __TwigTemplate_6dcb348e242f12413587ff8469281092533061ca8921b57e55771bf66d2
 <body>
 ";
         // line 12
-        $this->loadTemplate("::navigation.html.twig", "gaestebuch/formdone.html.twig", 12)->display($context);
+        $this->loadTemplate("::navigation-loggedin.html.twig", "gaestebuch/formdone.html.twig", 12)->display($context);
         // line 13
         echo "
 
@@ -135,7 +135,7 @@ class __TwigTemplate_6dcb348e242f12413587ff8469281092533061ca8921b57e55771bf66d2
     <link rel=\"stylesheet\" type=\"text/css\" href=\"{{ asset('css/application.css') }}\">
 
 <body>
-{% include '::navigation.html.twig' %}
+{% include '::navigation-loggedin.html.twig' %}
 
 
 <div class=\"container\">

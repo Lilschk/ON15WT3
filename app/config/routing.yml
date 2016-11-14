@@ -1,5 +1,6 @@
 logout:
   path: /logout
+  defaults: {_controller: AppBundle:Security:logout}
 
 user_registration:
   path: /register
@@ -9,9 +10,6 @@ homepage:
   path: /
   defaults: { _controller: AppBundle:Default:index }
 
-guestbook_idex:
-  path: /index
-  defaults:  {_controller: AppBundle:Default:guestbookhp}
 
 login:
   path: /login
@@ -29,26 +27,32 @@ task_success:
   path: /task_success/{Name}/{Mail}/{Nachricht}
   defaults: {_controller: AppBundle:Default:sucsess}
 
-beispiel:
-  path: /beispiel
-  defaults: { _controller: WebTechBundle:Beispiel:beispiel }
-
-beispiel_template:
-  path: /beispiel/template
-  defaults: { _controller: WebTechBundle:Beispiel:beispielTemplate }
+post_delete:
+  path: /postdelete/{id}
+  defaults: {_controller: AppBundle:Default:delete}
 
 
-luckynumer:
-  path: /luckynumber
-  defaults: {_controller: WebTechBundle:Aufgabe1:luckyNumber}
 
-name:
-  path: /luckynumber/{name}
-  defaults: {_controller: WebTechBundle:Aufgabe1:luckyNumber}
+#beispiel:
+ # path: /beispiel
+  #defaults: { _controller: WebTechBundle:Beispiel:beispiel }
 
-twigtest:
-  path: /test/{name}
-  defaults: {_controller: WebTechBundle:Aufgabe1:test}
+#beispiel_template:
+ # path: /beispiel/template
+  #defaults: { _controller: WebTechBundle:Beispiel:beispielTemplate }
+
+
+#luckynumer:
+ # path: /luckynumber
+  #defaults: {_controller: WebTechBundle:Aufgabe1:luckyNumber}
+
+#name:
+ # path: /luckynumber/{name}
+  #defaults: {_controller: WebTechBundle:Aufgabe1:luckyNumber}
+
+#twigtest:
+ # path: /test/{name}
+  #defaults: {_controller: WebTechBundle:Aufgabe1:test}
 
 
 

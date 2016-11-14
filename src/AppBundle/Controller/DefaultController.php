@@ -20,13 +20,9 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        return $this->render('index.html.twig');
-    }
-
-    public function guestbookhpAction(Request $request)
-    {
         return $this->render('base.html.twig');
     }
+
 
     public function loggedinAction(Request $request)
     {
@@ -100,12 +96,50 @@ class DefaultController extends Controller
     }
 
     public function showAction(Request $request){
+        $deleteForms = [];
         $events = $this->getDoctrine()
-            ->getRepository('AppBundle:User')
+            ->getRepository('AppBundle:Post')
             ->findAll();
+        foreach ($events as $event){array_push($deleteForms,$this->createDeleteForm($event)->createView());
+        }
         return $this->render('gaestebuch/eintraege.html.twig',array(
-            'events' => $events));
+            'events' => $events, 'deleteForms'=> $deleteForms));
 
+    }
+
+    /**
+     * Deletes a Apps entity.
+     *
+     * @Route("applicationdelete/{id}", name="application_delete")
+
+     */
+    public function deleteAction(Request $request, Post $post){
+        $deleteForm = $this->createDeleteForm($post);
+        $deleteForm->handleRequest($request);
+
+        if($deleteForm->isSubmitted() && $deleteForm->isValid()){
+            $em = $this->getDoctrine()->getManager();
+            $em->remove($post);
+            $em->flush();
+        }
+
+        return $this->redirectToRoute("guestbook_einträgezeigen");
+    }
+
+    /**
+     * Creates a form to delete a User entity.
+     *
+     * @param Apps $apps The Apps entity
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
+    private function createDeleteForm(Post $post)
+    {
+        return $this->createFormBuilder()
+            ->setAction($this->generateUrl('post_delete', array('id' => $post->getId())))
+            ->setMethod('DELETE')
+            ->getForm()
+            ;
     }
 
 

@@ -1,6 +1,6 @@
 <?php
 
-/* ::navigation.html.twig */
+/* ::navigation-loggedin.html.twig */
 class __TwigTemplate_d997c44845d8914ab8c44f9c6b9ee9c92b31a7a79abbe99f62055eaa0938f40b extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -42,7 +42,7 @@ class __TwigTemplate_d997c44845d8914ab8c44f9c6b9ee9c92b31a7a79abbe99f62055eaa093
 
     public function getTemplateName()
     {
-        return "::navigation.html.twig";
+        return "::navigation-loggedin.html.twig";
     }
 
     public function isTraitable()
@@ -65,6 +65,6 @@ class __TwigTemplate_d997c44845d8914ab8c44f9c6b9ee9c92b31a7a79abbe99f62055eaa093
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "::navigation.html.twig", "/Users/lilikovac/Documents/WT3_App/my_project/app/Resources/views/navigation.html.twig");
+        return new Twig_Source("", "::navigation-loggedin.html.twig", "/Users/lilikovac/Documents/WT3_App/my_project/app/Resources/views/navigation-loggedin.html.twig");
     }
 }

@@ -83,7 +83,7 @@
   ':default:index.html.twig' => '/Users/lilikovac/Documents/WT3_App/my_project/app/Resources/views/default/index.html.twig',
   ':gaestebuch:form.html.twig' => '/Users/lilikovac/Documents/WT3_App/my_project/app/Resources/views/gaestebuch/form.html.twig',
   ':gaestebuch:gaestebuch.html.twig' => '/Users/lilikovac/Documents/WT3_App/my_project/app/Resources/views/gaestebuch/gaestebuch.html.twig',
-  '::navigation.html.twig' => '/Users/lilikovac/Documents/WT3_App/my_project/app/Resources/views/navigation.html.twig',
+  '::navigation-loggedin.html.twig' => '/Users/lilikovac/Documents/WT3_App/my_project/app/Resources/views/navigation-loggedin.html.twig',
   ':security:login.html.twig' => '/Users/lilikovac/Documents/WT3_App/my_project/app/Resources/views/security/login.html.twig',
   '::sidebar.html.twig' => '/Users/lilikovac/Documents/WT3_App/my_project/app/Resources/views/sidebar.html.twig',
 );

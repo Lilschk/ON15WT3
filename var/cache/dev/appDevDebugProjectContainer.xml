@@ -487,7 +487,7 @@
                   <tag name="cache.pool"/>
                   <argument>dmM-VaF5Nw</argument>
                   <argument>0</argument>
-                  <argument>xCH+PkqwSISUS4e24wLJjQ</argument>
+                  <argument>BGnZWbVgRiQd3Cyd-Ibdww</argument>
                   <argument>/Users/lilikovac/Documents/WT3_App/my_project/var/cache/dev/pools</argument>
                   <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                   <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -500,7 +500,7 @@
                   <tag name="cache.pool"/>
                   <argument>9yQR5G69y3</argument>
                   <argument>0</argument>
-                  <argument>xCH+PkqwSISUS4e24wLJjQ</argument>
+                  <argument>BGnZWbVgRiQd3Cyd-Ibdww</argument>
                   <argument>/Users/lilikovac/Documents/WT3_App/my_project/var/cache/dev/pools</argument>
                   <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                   <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -832,7 +832,7 @@
       <tag name="cache.pool"/>
       <argument>n3Lcr+MtP8</argument>
       <argument>0</argument>
-      <argument>xCH+PkqwSISUS4e24wLJjQ</argument>
+      <argument>BGnZWbVgRiQd3Cyd-Ibdww</argument>
       <argument>/Users/lilikovac/Documents/WT3_App/my_project/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -1599,7 +1599,7 @@
           <argument type="collection">
             <argument key="security.firewall.map.context.main" type="service">
               <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
-                <argument>/login</argument>
+                <argument>/loggedin</argument>
               </service>
             </argument>
           </argument>

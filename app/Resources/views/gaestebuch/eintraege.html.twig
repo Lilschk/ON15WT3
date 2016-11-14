@@ -1,4 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Welcome!{% endblock %}</title>
+
+    {% block javascripts %}
+        <script type="text/javascript" src="{{ asset('lib/bootstrap/JQuery/JQuery.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('lib/bootstrap/js/bootstrap.js') }}"></script>
+
+    {%  endblock %}
+
+    {% block stylesheets %}
+    <!--<link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('lib/bootstrap/css/bootstrap.css') }}">
+    <!--<link rel="stylesheet" type="text/css" href="{{ asset('css/application.css') }}">
+    <!--<link rel="stylesheet" tyoe="text/css" href="{{ asset('lib/normalize.css') }}">-->
+    {% endblock %}
+</head>
+{% include '::navigation-loggedin.html.twig' %}
+
+<table class="table">
+    <tbody>
+
+    {% for event in events %}
+
+        <tr><td>{{ event.getName }}</td><td>{{ event.getMail }}</td><td>{{ event.getNachricht }}</td><td><a class="btn btn-danger red btn-xs" data-toggle="modal" data-target="#confirm-modal{{ event.id }}">Löschen</a></td>
+
+
+                <div class="modal fade confirm-modal" id="confirm-modal{{ event.id }}" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                Sind Sie sicher, <br>dass Sie diesen Eintrag löschen wollen?
+                            </div>
+                            <div class="modal-footer">
+                                {{ form_start(deleteForms[loop.index-1]) }}
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Nein</button>
+                                <input type="submit" class="btn btn-primary" value="Ja">
+                                {{ form_end(deleteForms[loop.index-1]) }}
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+        </tr>
+
+
+{% endfor %}
+</tbody>
+
+
+
+{#
+    <tr>
+        <th scope="row">E-Mail</th>
 {% for event in events %}
 
-    {{ event.getName }}
+   <td> {{ event.getMail }} </td>
 {% endfor %}
+        </tr>
+    <tr>
+        <th scope="row">Nachricht</th>
+{% for event in events %}
+
+   <td>  </td>
+{% endfor %}
+    </tr>>
+    </tbody>
+    </table>#}

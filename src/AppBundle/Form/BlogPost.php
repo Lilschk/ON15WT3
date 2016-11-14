@@ -19,8 +19,9 @@ $builder
     ->add('Mail', EmailType::class, array('data' => 'abcdef'))
     ->add('Nachricht', TextareaType::class, array(
         'attr' => array('class' => 'tinymce')))
-    ->add('save', SubmitType::class, array('label' => 'Create Task'))
+    ->add('save', SubmitType::class, array('label' => 'Nachricht abschicken'))
 ;
 }
 }
 ?>
+

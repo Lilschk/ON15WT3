@@ -102,7 +102,7 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         // logout
         if ($pathinfo === '/logout') {
-            return array('_route' => 'logout');
+            return array (  '_controller' => 'AppBundle\\Controller\\SecurityController::logoutAction',  '_route' => 'logout',);
         }
 
         // user_registration
@@ -117,11 +117,6 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             }
 
             return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);
-        }
-
-        // guestbook_idex
-        if ($pathinfo === '/index') {
-            return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::guestbookhpAction',  '_route' => 'guestbook_idex',);
         }
 
         if (0 === strpos($pathinfo, '/login')) {
@@ -147,35 +142,9 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'task_success')), array (  '_controller' => 'AppBundle\\Controller\\DefaultController::sucsessAction',));
         }
 
-        if (0 === strpos($pathinfo, '/beispiel')) {
-            // beispiel
-            if ($pathinfo === '/beispiel') {
-                return array (  '_controller' => 'WebTechBundle:Beispiel:beispiel',  '_route' => 'beispiel',);
-            }
-
-            // beispiel_template
-            if ($pathinfo === '/beispiel/template') {
-                return array (  '_controller' => 'WebTechBundle:Beispiel:beispielTemplate',  '_route' => 'beispiel_template',);
-            }
-
-        }
-
-        if (0 === strpos($pathinfo, '/luckynumber')) {
-            // luckynumer
-            if ($pathinfo === '/luckynumber') {
-                return array (  '_controller' => 'WebTechBundle:Aufgabe1:luckyNumber',  '_route' => 'luckynumer',);
-            }
-
-            // name
-            if (preg_match('#^/luckynumber/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'name')), array (  '_controller' => 'WebTechBundle:Aufgabe1:luckyNumber',));
-            }
-
-        }
-
-        // twigtest
-        if (0 === strpos($pathinfo, '/test') && preg_match('#^/test/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'twigtest')), array (  '_controller' => 'WebTechBundle:Aufgabe1:test',));
+        // post_delete
+        if (0 === strpos($pathinfo, '/postdelete') && preg_match('#^/postdelete/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'post_delete')), array (  '_controller' => 'AppBundle\\Controller\\DefaultController::deleteAction',));
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

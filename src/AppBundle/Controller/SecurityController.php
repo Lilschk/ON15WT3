@@ -28,4 +28,8 @@ class SecurityController extends Controller
         ));
     }
 
+    public function logoutAction(Request $request)
+    {
+        return $this->render('security/logout.html.twig');
+    }
 }

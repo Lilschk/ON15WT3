@@ -15,34 +15,27 @@ class __TwigTemplate_b30e6bc3a68958fe960b5ea65bb320e120836409f9b892af649474ba24d
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_b71a0f58cf4ff730e149343b22fe3fd45a09c642c41238c105b684c63f208222 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_b71a0f58cf4ff730e149343b22fe3fd45a09c642c41238c105b684c63f208222->enter($__internal_b71a0f58cf4ff730e149343b22fe3fd45a09c642c41238c105b684c63f208222_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "::navigation.html.twig"));
+        $__internal_6bd0967c704028133b2e5e21fb758dd4872fed636fb9dca72df251c65826a5a3 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_6bd0967c704028133b2e5e21fb758dd4872fed636fb9dca72df251c65826a5a3->enter($__internal_6bd0967c704028133b2e5e21fb758dd4872fed636fb9dca72df251c65826a5a3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "::navigation.html.twig"));
 
         // line 1
         echo "<nav class=\"navbar navbar-light bg-faded\">
-        <nav class=\"page-nav\">
-            <ul class=\"nav navbar-nav\">
-                <li class=\"nav-item active\">
-            <a class=\"nav-link\" href=\"";
+    <nav class=\"page-nav\">
+        <ul class=\"nav navbar-nav\">
+            <li class=\"nav-item active\">
+                <a class=\"nav-link\" href=\"";
         // line 5
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("homepage");
         echo "\">Home</a></li>
             <li class=\"nav-item\"><a class=\"nav-link\" href=\"";
         // line 6
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("luckynumer");
-        echo "\">login</a></li>
-            <li class=\"nav-item\"><a class=\"nav-link\" href=\"";
-        // line 7
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("twigtest", array("name" => "Dave"));
-        echo "\">luckynumber</a></li>
-            <li class=\"nav-item\"><a class=\"nav-link\" href=\"";
-        // line 8
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("name", array("name" => "Dave"));
-        echo "\">etwas anderes</a></li>
-        </nav>
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("user_registration");
+        echo "\">Registrieren</a></li>
+        </ul>
+    </nav>
 </nav>";
         
-        $__internal_b71a0f58cf4ff730e149343b22fe3fd45a09c642c41238c105b684c63f208222->leave($__internal_b71a0f58cf4ff730e149343b22fe3fd45a09c642c41238c105b684c63f208222_prof);
+        $__internal_6bd0967c704028133b2e5e21fb758dd4872fed636fb9dca72df251c65826a5a3->leave($__internal_6bd0967c704028133b2e5e21fb758dd4872fed636fb9dca72df251c65826a5a3_prof);
 
     }
 
@@ -58,7 +51,7 @@ class __TwigTemplate_b30e6bc3a68958fe960b5ea65bb320e120836409f9b892af649474ba24d
 
     public function getDebugInfo()
     {
-        return array (  40 => 8,  36 => 7,  32 => 6,  28 => 5,  22 => 1,);
+        return array (  32 => 6,  28 => 5,  22 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -72,14 +65,13 @@ class __TwigTemplate_b30e6bc3a68958fe960b5ea65bb320e120836409f9b892af649474ba24d
     public function getSourceContext()
     {
         return new Twig_Source("<nav class=\"navbar navbar-light bg-faded\">
-        <nav class=\"page-nav\">
-            <ul class=\"nav navbar-nav\">
-                <li class=\"nav-item active\">
-            <a class=\"nav-link\" href=\"{{ path('homepage') }}\">Home</a></li>
-            <li class=\"nav-item\"><a class=\"nav-link\" href=\"{{ path('luckynumer') }}\">login</a></li>
-            <li class=\"nav-item\"><a class=\"nav-link\" href=\"{{ path('twigtest', {'name' : 'Dave'}) }}\">luckynumber</a></li>
-            <li class=\"nav-item\"><a class=\"nav-link\" href=\"{{ path('name', {'name' : 'Dave'}) }}\">etwas anderes</a></li>
-        </nav>
+    <nav class=\"page-nav\">
+        <ul class=\"nav navbar-nav\">
+            <li class=\"nav-item active\">
+                <a class=\"nav-link\" href=\"{{ path('homepage') }}\">Home</a></li>
+            <li class=\"nav-item\"><a class=\"nav-link\" href=\"{{ path('user_registration') }}\">Registrieren</a></li>
+        </ul>
+    </nav>
 </nav>", "::navigation.html.twig", "/Users/lilikovac/Documents/WT3_App/my_project/app/Resources/views/navigation.html.twig");
     }
 }

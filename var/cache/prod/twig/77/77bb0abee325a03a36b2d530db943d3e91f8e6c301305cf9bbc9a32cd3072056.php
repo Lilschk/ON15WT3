@@ -52,7 +52,7 @@ class __TwigTemplate_4e7a67a21786b574bac01606830a329a2764a4cf6f6d2ad68ffb22ff6b7
     <body>
         ";
         // line 14
-        $this->loadTemplate("::navigation.html.twig", "::base.html.twig", 14)->display($context);
+        $this->loadTemplate("::navigation-loggedin.html.twig", "::base.html.twig", 14)->display($context);
         // line 15
         echo "
         <div class=\"container\">
