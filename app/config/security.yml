@@ -17,18 +17,17 @@ security:
            #pattern: ^/(_(profiler|wdt)|css|images|js)/
            #security: false
        main:
-                   pattern:    /loggedin
+                   pattern:    /login
                    http_basic: ~
                    provider: our_db_provider
+                   logout:
+                      path:   /logout
+                      target: /
+                      invalidate_session: true
 
 
-       main:
-           anonymous: ~
-           #guard:
-               #authenticators:
-                   #- app.security.login_form_authenticator
-           logout:
-               path: /logout
+
+
            # activate different ways to authenticate
 
            # http_basic: ~

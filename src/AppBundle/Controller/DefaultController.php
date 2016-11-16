@@ -4,12 +4,16 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\User;
 use AppBundle\Form\BlogPost;
+use AppBundle\Form\UserType;
 use Doctrine\ORM\Query;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Post;
 use Symfony\Component\Form\FormBuilderInterface;
+
+
+
 
 
 
@@ -97,6 +101,7 @@ class DefaultController extends Controller
 
     public function showAction(Request $request){
         $deleteForms = [];
+
         $events = $this->getDoctrine()
             ->getRepository('AppBundle:Post')
             ->findAll();
@@ -142,5 +147,35 @@ class DefaultController extends Controller
             ;
     }
 
+    public function editAction($id, Request $request)
+    {
 
-}
+        $form = $this->createForm(BlogPost::class);
+        $em = $this->getDoctrine()->getManager();
+        $post = $em->getRepository('AppBundle:Post')->find($id);
+        $form->handleRequest($request);
+
+
+
+        if ($form->isValid())
+        {
+            $post->setName($form->get('Name')->getData());
+            $post->setMail($form->get('Mail')->getData());
+            $post->setNachricht($form->get('Nachricht')->getData());
+
+            $em->flush();
+
+            return $this->redirectToRoute('guestbook_einträgezeigen');
+
+
+    }
+        return $this->render('gaestebuch/UpdateEintraege.html.twig', array('post'=>$post,
+            'form' => $form->createView(),));
+    }}
+
+
+
+
+
+
+

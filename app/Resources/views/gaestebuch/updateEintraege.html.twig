@@ -1,0 +1,19 @@
+{% include '::basic.html.twig' %}
+{% include '::navigation-loggedin.html.twig' %}
+{% use "form_div_layout.html.twig" %}
+
+
+{{ form_start(form) }}
+
+{{ form_label(form.Name) }}
+
+{{ form_widget(form.Name, {'value' : post.name}) }}
+
+{{ form_label(form.Mail) }}
+{{ form_widget(form.Mail, {'value' : post.mail}) }}
+
+
+{{ form_label(form.Nachricht) }}
+{{ form_widget(form.Nachricht, {'value' : post.nachricht}) }}
+
+{{ form_end(form) }}

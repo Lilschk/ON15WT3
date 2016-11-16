@@ -102,7 +102,7 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         // logout
         if ($pathinfo === '/logout') {
-            return array (  '_controller' => 'AppBundle\\Controller\\SecurityController::logoutAction',  '_route' => 'logout',);
+            return array('_route' => 'logout');
         }
 
         // user_registration
@@ -120,11 +120,6 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         }
 
         if (0 === strpos($pathinfo, '/login')) {
-            // login
-            if ($pathinfo === '/login') {
-                return array (  '_controller' => 'AppBundle\\Controller\\SecurityController::loginAction',  '_route' => 'login',);
-            }
-
             // guestbook_logged
             if ($pathinfo === '/login/loggedin') {
                 return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::loggedinAction',  '_route' => 'guestbook_logged',);
@@ -142,9 +137,17 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'task_success')), array (  '_controller' => 'AppBundle\\Controller\\DefaultController::sucsessAction',));
         }
 
-        // post_delete
-        if (0 === strpos($pathinfo, '/postdelete') && preg_match('#^/postdelete/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'post_delete')), array (  '_controller' => 'AppBundle\\Controller\\DefaultController::deleteAction',));
+        if (0 === strpos($pathinfo, '/post')) {
+            // post_delete
+            if (0 === strpos($pathinfo, '/postdelete') && preg_match('#^/postdelete/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'post_delete')), array (  '_controller' => 'AppBundle\\Controller\\DefaultController::deleteAction',));
+            }
+
+            // post_edit
+            if (0 === strpos($pathinfo, '/postupdate') && preg_match('#^/postupdate/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'post_edit')), array (  '_controller' => 'AppBundle\\Controller\\DefaultController::editAction',));
+            }
+
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

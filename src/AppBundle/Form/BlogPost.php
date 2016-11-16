@@ -16,9 +16,8 @@ public function buildForm(FormBuilderInterface $builder, array $options)
 {
 $builder
     ->add('Name', TextType::class)
-    ->add('Mail', EmailType::class, array('data' => 'abcdef'))
-    ->add('Nachricht', TextareaType::class, array(
-        'attr' => array('class' => 'tinymce')))
+    ->add('Mail', EmailType::class)
+    ->add('Nachricht', TextareaType::class)
     ->add('save', SubmitType::class, array('label' => 'Nachricht abschicken'))
 ;
 }

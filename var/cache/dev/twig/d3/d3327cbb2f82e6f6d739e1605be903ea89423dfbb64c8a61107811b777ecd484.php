@@ -15,8 +15,8 @@ class __TwigTemplate_ccee4213eee4a17bc67922129ad09805760e7234291132c6a8eb93579e7
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_fc94be5b17934bddce3fcc973f21d0a3e0b5083cc312df66f42713803b5e932c = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_fc94be5b17934bddce3fcc973f21d0a3e0b5083cc312df66f42713803b5e932c->enter($__internal_fc94be5b17934bddce3fcc973f21d0a3e0b5083cc312df66f42713803b5e932c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "security/logout.html.twig"));
+        $__internal_058f29f208c0771d603f20960ea301ab2bc403966c5045a86d6d7a5b20090f84 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_058f29f208c0771d603f20960ea301ab2bc403966c5045a86d6d7a5b20090f84->enter($__internal_058f29f208c0771d603f20960ea301ab2bc403966c5045a86d6d7a5b20090f84_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "security/logout.html.twig"));
 
         // line 1
         $this->loadTemplate("::basic.html.twig", "security/logout.html.twig", 1)->display($context);
@@ -29,7 +29,7 @@ class __TwigTemplate_ccee4213eee4a17bc67922129ad09805760e7234291132c6a8eb93579e7
         <p class=\"lead page-description\">Du bist Ausgeloggt.</p>
     </div>";
         
-        $__internal_fc94be5b17934bddce3fcc973f21d0a3e0b5083cc312df66f42713803b5e932c->leave($__internal_fc94be5b17934bddce3fcc973f21d0a3e0b5083cc312df66f42713803b5e932c_prof);
+        $__internal_058f29f208c0771d603f20960ea301ab2bc403966c5045a86d6d7a5b20090f84->leave($__internal_058f29f208c0771d603f20960ea301ab2bc403966c5045a86d6d7a5b20090f84_prof);
 
     }
 

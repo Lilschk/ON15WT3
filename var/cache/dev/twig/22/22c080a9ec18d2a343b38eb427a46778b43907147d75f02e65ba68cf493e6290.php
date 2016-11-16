@@ -15,8 +15,8 @@ class __TwigTemplate_b30e6bc3a68958fe960b5ea65bb320e120836409f9b892af649474ba24d
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_6bd0967c704028133b2e5e21fb758dd4872fed636fb9dca72df251c65826a5a3 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_6bd0967c704028133b2e5e21fb758dd4872fed636fb9dca72df251c65826a5a3->enter($__internal_6bd0967c704028133b2e5e21fb758dd4872fed636fb9dca72df251c65826a5a3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "::navigation.html.twig"));
+        $__internal_ec1505510dab55c419b348e27e37b91e7029b29d5c774b85be0b1878d2bb2bc8 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_ec1505510dab55c419b348e27e37b91e7029b29d5c774b85be0b1878d2bb2bc8->enter($__internal_ec1505510dab55c419b348e27e37b91e7029b29d5c774b85be0b1878d2bb2bc8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "::navigation.html.twig"));
 
         // line 1
         echo "<nav class=\"navbar navbar-light bg-faded\">
@@ -35,7 +35,7 @@ class __TwigTemplate_b30e6bc3a68958fe960b5ea65bb320e120836409f9b892af649474ba24d
     </nav>
 </nav>";
         
-        $__internal_6bd0967c704028133b2e5e21fb758dd4872fed636fb9dca72df251c65826a5a3->leave($__internal_6bd0967c704028133b2e5e21fb758dd4872fed636fb9dca72df251c65826a5a3_prof);
+        $__internal_ec1505510dab55c419b348e27e37b91e7029b29d5c774b85be0b1878d2bb2bc8->leave($__internal_ec1505510dab55c419b348e27e37b91e7029b29d5c774b85be0b1878d2bb2bc8_prof);
 
     }
 

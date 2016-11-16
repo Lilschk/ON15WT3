@@ -1,6 +1,6 @@
 logout:
-  path: /logout
-  defaults: {_controller: AppBundle:Security:logout}
+    path:   /logout
+  #defaults: {_controller: AppBundle:Security:logout}
 
 user_registration:
   path: /register
@@ -9,11 +9,6 @@ user_registration:
 homepage:
   path: /
   defaults: { _controller: AppBundle:Default:index }
-
-
-login:
-  path: /login
-  defaults: {_controller: AppBundle:Security:login}
 
 guestbook_logged:
   path: /login/loggedin #soll mal /index im eingeloggten Zustand sein?
@@ -30,6 +25,10 @@ task_success:
 post_delete:
   path: /postdelete/{id}
   defaults: {_controller: AppBundle:Default:delete}
+
+post_edit:
+  path: /postupdate/{id}
+  defaults: {_controller: AppBundle:Default:edit}
 
 
 

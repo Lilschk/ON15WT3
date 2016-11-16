@@ -487,7 +487,7 @@
                   <tag name="cache.pool"/>
                   <argument>dmM-VaF5Nw</argument>
                   <argument>0</argument>
-                  <argument>BGnZWbVgRiQd3Cyd-Ibdww</argument>
+                  <argument>V2i41qp8qOY1ow+lXvoEJA</argument>
                   <argument>/Users/lilikovac/Documents/WT3_App/my_project/var/cache/dev/pools</argument>
                   <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                   <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -500,7 +500,7 @@
                   <tag name="cache.pool"/>
                   <argument>9yQR5G69y3</argument>
                   <argument>0</argument>
-                  <argument>BGnZWbVgRiQd3Cyd-Ibdww</argument>
+                  <argument>V2i41qp8qOY1ow+lXvoEJA</argument>
                   <argument>/Users/lilikovac/Documents/WT3_App/my_project/var/cache/dev/pools</argument>
                   <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                   <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -832,7 +832,7 @@
       <tag name="cache.pool"/>
       <argument>n3Lcr+MtP8</argument>
       <argument>0</argument>
-      <argument>BGnZWbVgRiQd3Cyd-Ibdww</argument>
+      <argument>V2i41qp8qOY1ow+lXvoEJA</argument>
       <argument>/Users/lilikovac/Documents/WT3_App/my_project/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -1599,7 +1599,7 @@
           <argument type="collection">
             <argument key="security.firewall.map.context.main" type="service">
               <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
-                <argument>/loggedin</argument>
+                <argument>/login</argument>
               </service>
             </argument>
           </argument>
@@ -1611,6 +1611,13 @@
       <argument type="service" id="request_stack" on-invalid="null"/>
       <argument type="service" id="router" on-invalid="null"/>
       <argument type="service" id="security.token_storage" on-invalid="null"/>
+      <call method="registerListener">
+        <argument>main</argument>
+        <argument>/logout</argument>
+        <argument>logout</argument>
+        <argument>_csrf_token</argument>
+        <argument>null</argument>
+      </call>
     </service>
     <service id="security.validator.user_password" class="Symfony\Component\Security\Core\Validator\Constraints\UserPasswordValidator">
       <tag name="validator.constraint_validator" alias="security.validator.user_password"/>
@@ -1700,6 +1707,38 @@
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="debug.event_dispatcher" on-invalid="null"/>
             <argument type="service" id="security.authentication.trust_resolver"/>
+          </service>
+        </argument>
+        <argument type="service">
+          <service class="Symfony\Component\Security\Http\Firewall\LogoutListener" public="false">
+            <argument type="service" id="security.token_storage"/>
+            <argument type="service">
+              <service class="Symfony\Component\Security\Http\HttpUtils" public="false">
+                <argument type="service" id="router" on-invalid="null"/>
+                <argument type="service" id="router" on-invalid="null"/>
+              </service>
+            </argument>
+            <argument type="service">
+              <service class="Symfony\Component\Security\Http\Logout\DefaultLogoutSuccessHandler" public="false">
+                <argument type="service">
+                  <service class="Symfony\Component\Security\Http\HttpUtils" public="false">
+                    <argument type="service" id="router" on-invalid="null"/>
+                    <argument type="service" id="router" on-invalid="null"/>
+                  </service>
+                </argument>
+                <argument>/</argument>
+              </service>
+            </argument>
+            <argument type="collection">
+              <argument key="csrf_parameter">_csrf_token</argument>
+              <argument key="csrf_token_id">logout</argument>
+              <argument key="logout_path">/logout</argument>
+            </argument>
+            <call method="addHandler">
+              <argument type="service">
+                <service class="Symfony\Component\Security\Http\Logout\SessionLogoutHandler" public="false"/>
+              </argument>
+            </call>
           </service>
         </argument>
         <argument type="service">
