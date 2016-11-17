@@ -17,8 +17,8 @@ class __TwigTemplate_7637c48deda6bf76a68b37bf80fb121dccbbae231ac6b3552e957631ba2
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_7cac697fd4c440a32f51e4e21850c836b5f234c8ac3fc3a0ceb6d808f27665ef = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_7cac697fd4c440a32f51e4e21850c836b5f234c8ac3fc3a0ceb6d808f27665ef->enter($__internal_7cac697fd4c440a32f51e4e21850c836b5f234c8ac3fc3a0ceb6d808f27665ef_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "::gaestebuch/gaestebuch.html.twig"));
+        $__internal_f4c24e4d56d0a7bae0437a4c81ee8af1ea003032d298fc3b8d12fedc29ed2bd6 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_f4c24e4d56d0a7bae0437a4c81ee8af1ea003032d298fc3b8d12fedc29ed2bd6->enter($__internal_f4c24e4d56d0a7bae0437a4c81ee8af1ea003032d298fc3b8d12fedc29ed2bd6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "::gaestebuch/gaestebuch.html.twig"));
 
         // line 1
         echo "<!DOCTYPE html>
@@ -40,16 +40,12 @@ class __TwigTemplate_7637c48deda6bf76a68b37bf80fb121dccbbae231ac6b3552e957631ba2
         // line 8
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("lib/bootstrap/css/bootstrap.css"), "html", null, true);
         echo "\">
-    <link rel=\"stylesheet\" type=\"text/css\" href=\"";
-        // line 9
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("css/application.css"), "html", null, true);
-        echo "\">
 
 <body>
 ";
+        // line 11
+        $this->loadTemplate("::navigation-loggedin.html.twig", "::gaestebuch/gaestebuch.html.twig", 11)->display($context);
         // line 12
-        $this->loadTemplate("::navigation-loggedin.html.twig", "::gaestebuch/gaestebuch.html.twig", 12)->display($context);
-        // line 13
         echo "
 
 <div class=\"container\">
@@ -61,30 +57,30 @@ class __TwigTemplate_7637c48deda6bf76a68b37bf80fb121dccbbae231ac6b3552e957631ba2
 
 ";
         
-        $__internal_7cac697fd4c440a32f51e4e21850c836b5f234c8ac3fc3a0ceb6d808f27665ef->leave($__internal_7cac697fd4c440a32f51e4e21850c836b5f234c8ac3fc3a0ceb6d808f27665ef_prof);
+        $__internal_f4c24e4d56d0a7bae0437a4c81ee8af1ea003032d298fc3b8d12fedc29ed2bd6->leave($__internal_f4c24e4d56d0a7bae0437a4c81ee8af1ea003032d298fc3b8d12fedc29ed2bd6_prof);
 
     }
 
     // line 5
     public function block_title($context, array $blocks = array())
     {
-        $__internal_26c64ba71c3ad3727837d7874a4d6e648fa31e0fd1714f90446faa7fa5075462 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_26c64ba71c3ad3727837d7874a4d6e648fa31e0fd1714f90446faa7fa5075462->enter($__internal_26c64ba71c3ad3727837d7874a4d6e648fa31e0fd1714f90446faa7fa5075462_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "::gaestebuch/gaestebuch.html.twig"));
+        $__internal_bae44618c5c17de60135a6dd5cec206df3e4d387d3ee1e4b045a920f87823495 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_bae44618c5c17de60135a6dd5cec206df3e4d387d3ee1e4b045a920f87823495->enter($__internal_bae44618c5c17de60135a6dd5cec206df3e4d387d3ee1e4b045a920f87823495_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "::gaestebuch/gaestebuch.html.twig"));
 
         echo "You're logged in!";
         
-        $__internal_26c64ba71c3ad3727837d7874a4d6e648fa31e0fd1714f90446faa7fa5075462->leave($__internal_26c64ba71c3ad3727837d7874a4d6e648fa31e0fd1714f90446faa7fa5075462_prof);
+        $__internal_bae44618c5c17de60135a6dd5cec206df3e4d387d3ee1e4b045a920f87823495->leave($__internal_bae44618c5c17de60135a6dd5cec206df3e4d387d3ee1e4b045a920f87823495_prof);
 
     }
 
     // line 6
     public function block_stylesheets($context, array $blocks = array())
     {
-        $__internal_91b81ea78b50fa6c2286cc8578f57f0ad2f093f4fb01affed8bbc72d53244341 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_91b81ea78b50fa6c2286cc8578f57f0ad2f093f4fb01affed8bbc72d53244341->enter($__internal_91b81ea78b50fa6c2286cc8578f57f0ad2f093f4fb01affed8bbc72d53244341_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "::gaestebuch/gaestebuch.html.twig"));
+        $__internal_fb9bfce2c6c0adfb91101d43f4fdeedc9d8b6fb4714b927b2cfa28ddfa30f395 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_fb9bfce2c6c0adfb91101d43f4fdeedc9d8b6fb4714b927b2cfa28ddfa30f395->enter($__internal_fb9bfce2c6c0adfb91101d43f4fdeedc9d8b6fb4714b927b2cfa28ddfa30f395_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "::gaestebuch/gaestebuch.html.twig"));
 
         
-        $__internal_91b81ea78b50fa6c2286cc8578f57f0ad2f093f4fb01affed8bbc72d53244341->leave($__internal_91b81ea78b50fa6c2286cc8578f57f0ad2f093f4fb01affed8bbc72d53244341_prof);
+        $__internal_fb9bfce2c6c0adfb91101d43f4fdeedc9d8b6fb4714b927b2cfa28ddfa30f395->leave($__internal_fb9bfce2c6c0adfb91101d43f4fdeedc9d8b6fb4714b927b2cfa28ddfa30f395_prof);
 
     }
 
@@ -100,7 +96,7 @@ class __TwigTemplate_7637c48deda6bf76a68b37bf80fb121dccbbae231ac6b3552e957631ba2
 
     public function getDebugInfo()
     {
-        return array (  81 => 6,  69 => 5,  53 => 13,  51 => 12,  45 => 9,  41 => 8,  36 => 7,  34 => 6,  30 => 5,  24 => 1,);
+        return array (  77 => 6,  65 => 5,  49 => 12,  47 => 11,  41 => 8,  36 => 7,  34 => 6,  30 => 5,  24 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -121,7 +117,6 @@ class __TwigTemplate_7637c48deda6bf76a68b37bf80fb121dccbbae231ac6b3552e957631ba2
     {% block stylesheets %}{% endblock %}
     <link rel=\"icon\" type=\"image/x-icon\" href=\"{{ asset('favicon.ico') }}\" />
     <link rel=\"stylesheet\" type=\"text/css\" href=\"{{ asset('lib/bootstrap/css/bootstrap.css') }}\">
-    <link rel=\"stylesheet\" type=\"text/css\" href=\"{{ asset('css/application.css') }}\">
 
 <body>
 {% include '::navigation-loggedin.html.twig' %}

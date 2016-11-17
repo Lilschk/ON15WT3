@@ -3,9 +3,14 @@
 <head>
     <meta charset="UTF-8" />
     <title>{% block title %}Welcome!{% endblock %}</title>
-    {% block stylesheets %}{% endblock %}
-    <!--<link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />-->
+    {% block stylesheets %}
+
     <link rel="stylesheet" type="text/css" href="{{ asset('lib/bootstrap/css/bootstrap.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/application.css') }}">
-    <!--<link rel="stylesheet" tyoe="text/css" href="{{ asset('lib/normalize.css') }}">-->
+    {% endblock %}
+
+    {% block javascripts %}
+        <script type="text/javascript" src="{{ asset('lib/bootstrap/JQuery/JQuery.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('lib/bootstrap/js/bootstrap.js') }}"></script>
+
+    {% endblock %}
 </head>

@@ -11,15 +11,13 @@ class __TwigTemplate_540a0905fcdfea87b7e70272f7fbd0b3d54296068f4044096b603fbc031
 
         $this->blocks = array(
             'title' => array($this, 'block_title'),
-            'javascripts' => array($this, 'block_javascripts'),
-            'stylesheets' => array($this, 'block_stylesheets'),
         );
     }
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_a0ebf29c0ecf42f5e43054e1a9b9b71692b8e1901f5159f82446bc154cb796a7 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_a0ebf29c0ecf42f5e43054e1a9b9b71692b8e1901f5159f82446bc154cb796a7->enter($__internal_a0ebf29c0ecf42f5e43054e1a9b9b71692b8e1901f5159f82446bc154cb796a7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "gaestebuch/eintraege.html.twig"));
+        $__internal_5525477ff0822c89d69c31cc8f6caf6764878d755a5ac3b6df4e4972a511f3b1 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_5525477ff0822c89d69c31cc8f6caf6764878d755a5ac3b6df4e4972a511f3b1->enter($__internal_5525477ff0822c89d69c31cc8f6caf6764878d755a5ac3b6df4e4972a511f3b1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "gaestebuch/eintraege.html.twig"));
 
         // line 1
         echo "<!DOCTYPE html>
@@ -30,21 +28,18 @@ class __TwigTemplate_540a0905fcdfea87b7e70272f7fbd0b3d54296068f4044096b603fbc031
         // line 5
         $this->displayBlock('title', $context, $blocks);
         echo "</title>
-
     ";
+        // line 6
+        $this->loadTemplate("::basic.html.twig", "gaestebuch/eintraege.html.twig", 6)->display($context);
         // line 7
-        $this->displayBlock('javascripts', $context, $blocks);
-        // line 12
-        echo "
-    ";
-        // line 13
-        $this->displayBlock('stylesheets', $context, $blocks);
-        // line 19
-        echo "</head>
+        echo "    <script type=\"text/javascript\" src=\"";
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("lib/Javascript/Sort.js"), "html", null, true);
+        echo "\"></script>
+</head>
 ";
-        // line 20
-        $this->loadTemplate("::navigation-loggedin.html.twig", "gaestebuch/eintraege.html.twig", 20)->display($context);
-        // line 21
+        // line 9
+        $this->loadTemplate("::navigation-loggedin.html.twig", "gaestebuch/eintraege.html.twig", 9)->display($context);
+        // line 10
         echo "
 <table class=\"table sortierbar\">
     <thead>
@@ -57,9 +52,9 @@ class __TwigTemplate_540a0905fcdfea87b7e70272f7fbd0b3d54296068f4044096b603fbc031
     <tbody>
 
     ";
-        // line 32
+        // line 21
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["events"]) ? $context["events"] : $this->getContext($context, "events")));
+        $context['_seq'] = twig_ensure_traversable((isset($context["posts"]) ? $context["posts"] : $this->getContext($context, "posts")));
         $context['loop'] = array(
           'parent' => $context['_parent'],
           'index0' => 0,
@@ -73,37 +68,42 @@ class __TwigTemplate_540a0905fcdfea87b7e70272f7fbd0b3d54296068f4044096b603fbc031
             $context['loop']['length'] = $length;
             $context['loop']['last'] = 1 === $length;
         }
-        foreach ($context['_seq'] as $context["_key"] => $context["event"]) {
-            // line 33
+        foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
+            // line 22
             echo "
+
         <tr>
-            <td>";
-            // line 35
-            echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "getName", array()), "html", null, true);
+            <td class=\"hidden-xl-down\">";
+            // line 25
+            echo twig_escape_filter($this->env, $this->getAttribute($context["post"], "getId", array()), "html", null, true);
             echo "</td>
             <td>";
-            // line 36
-            echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "getMail", array()), "html", null, true);
+            // line 26
+            echo twig_escape_filter($this->env, $this->getAttribute($context["post"], "getName", array()), "html", null, true);
             echo "</td>
             <td>";
-            // line 37
-            echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "getNachricht", array()), "html", null, true);
+            // line 27
+            echo twig_escape_filter($this->env, $this->getAttribute($context["post"], "getMail", array()), "html", null, true);
+            echo "</td>
+            <td>";
+            // line 28
+            echo twig_escape_filter($this->env, $this->getAttribute($context["post"], "getNachricht", array()), "html", null, true);
             echo "</td>
             <td><a class=\"btn btn-danger red btn-xs\" data-toggle=\"modal\" data-target=\"#confirm-modal";
-            // line 38
-            echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "id", array()), "html", null, true);
+            // line 29
+            echo twig_escape_filter($this->env, $this->getAttribute($context["post"], "id", array()), "html", null, true);
             echo "\">Löschen</a>
             </td>
             <td><a class=\"btn btn-success green btn-xs\" href=\"";
-            // line 40
-            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("post_edit", array("id" => $this->getAttribute($context["event"], "id", array()))), "html", null, true);
+            // line 31
+            echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("post_edit", array("id" => $this->getAttribute($context["post"], "id", array()))), "html", null, true);
             echo "\">Ändern</a>
             </td>
 
 
             <div class=\"modal fade confirm-modal\" id=\"confirm-modal";
-            // line 44
-            echo twig_escape_filter($this->env, $this->getAttribute($context["event"], "id", array()), "html", null, true);
+            // line 35
+            echo twig_escape_filter($this->env, $this->getAttribute($context["post"], "id", array()), "html", null, true);
             echo "\" tabindex=\"-1\" role=\"dialog\"
                  aria-labelledby=\"mySmallModalLabel\">
                 <div class=\"modal-dialog modal-sm\">
@@ -113,13 +113,13 @@ class __TwigTemplate_540a0905fcdfea87b7e70272f7fbd0b3d54296068f4044096b603fbc031
                         </div>
                         <div class=\"modal-footer\">
                             ";
-            // line 52
+            // line 43
             echo             $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->renderBlock($this->getAttribute((isset($context["deleteForms"]) ? $context["deleteForms"] : $this->getContext($context, "deleteForms")), ($this->getAttribute($context["loop"], "index", array()) - 1), array(), "array"), 'form_start');
             echo "
                             <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Nein</button>
                             <input type=\"submit\" class=\"btn btn-primary\" value=\"Ja\">
                             ";
-            // line 55
+            // line 46
             echo             $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->renderBlock($this->getAttribute((isset($context["deleteForms"]) ? $context["deleteForms"] : $this->getContext($context, "deleteForms")), ($this->getAttribute($context["loop"], "index", array()) - 1), array(), "array"), 'form_end');
             echo "
                         </div>
@@ -128,65 +128,65 @@ class __TwigTemplate_540a0905fcdfea87b7e70272f7fbd0b3d54296068f4044096b603fbc031
             </div>
 
             ";
-            // line 62
+            // line 53
             echo "                ";
-            // line 63
+            // line 54
             echo "                    ";
-            // line 64
+            // line 55
             echo "                        ";
-            // line 65
+            // line 56
             echo "                            ";
-            // line 66
+            // line 57
             echo "                            ";
-            // line 67
+            // line 58
             echo "                        ";
-            // line 68
+            // line 59
             echo "                        ";
-            // line 69
+            // line 60
             echo "                            ";
-            // line 70
+            // line 61
             echo "                                ";
+            // line 62
+            echo "                                    ";
+            // line 63
+            echo "                                    ";
+            // line 64
+            echo "                                ";
+            // line 65
+            echo "                                ";
+            // line 66
+            echo "                                    ";
+            // line 67
+            echo "                                    ";
+            // line 68
+            echo "                                ";
+            // line 69
+            echo "                                ";
+            // line 70
+            echo "                                    ";
             // line 71
             echo "                                    ";
             // line 72
-            echo "                                    ";
+            echo "                                ";
             // line 73
-            echo "                                ";
+            echo "                            ";
             // line 74
-            echo "                                ";
+            echo "                        ";
             // line 75
-            echo "                                    ";
+            echo "                        ";
             // line 76
-            echo "                                    ";
+            echo "                            ";
             // line 77
-            echo "                                ";
+            echo "                        ";
             // line 78
-            echo "                                ";
-            // line 79
-            echo "                                    ";
-            // line 80
-            echo "                                    ";
-            // line 81
-            echo "                                ";
-            // line 82
-            echo "                            ";
-            // line 83
-            echo "                        ";
-            // line 84
-            echo "                        ";
-            // line 85
-            echo "                            ";
-            // line 86
-            echo "                        ";
-            // line 87
             echo "                    ";
-            // line 88
+            // line 79
             echo "                ";
-            // line 89
+            // line 80
             echo "            ";
-            // line 90
+            // line 81
             echo "        ";
-            // line 91
+            // line 82
             echo "
 
     ";
@@ -200,168 +200,28 @@ class __TwigTemplate_540a0905fcdfea87b7e70272f7fbd0b3d54296068f4044096b603fbc031
             }
         }
         $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['event'], $context['_parent'], $context['loop']);
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 94
+        // line 85
         echo "    </tbody>
-    <script>
-        ( function () {
-
-            \"use strict\";
-
-            var tableSort = function (tab) {
-                var titel = tab.getElementsByTagName(\"thead\")[0].getElementsByTagName(\"tr\")[0].getElementsByTagName(\"th\");
-                // in titel werden alle Elemente in th gespeichert
-                var tbdy = tab.getElementsByTagName(\"tbody\")[0];
-
-                var tz = tbdy.rows;
-                var nzeilen = tz.length;
-
-                if (nzeilen == 0)
-                    return;
-                var nspalten = tz[0].cells.length;
-
-                var arr = new Array(nzeilen);
-
-                var sortiert = -1;
-
-                //erstellt Buttons mit onclick in var b
-                var initTableHead = function (sp) {
-                    var b = document.createElement(\"button\");
-                    b.type = \"button\";
-                    b.className = \"btn btn-secondary\";
-                    b.innerHTML = titel[sp].innerHTML;
-
-                    b.addEventListener(\"click\", function () { tsort(sp); },false);
-                    titel[sp].innerHTML = \"\";
-                    titel[sp].appendChild(b);
-                }
-
-                //auslesen Tabellenfelder
-                var getData = function (ele) {
-                    return ele.innerHTML;
-                }
+    </table>
 
 
-                var vglFkt_s = function (a, b) {
-                    var as = a[sortiert], bs = b[sortiert];
-                    if (as > bs) return 1;
-                    else return -1;
-                }
-
-                var tsort = function (sp) {
-                    if (sp == sortiert) arr.reverse(); // Tabelle ist schon nach dieser Spalte sortiert, also nur Reihenfolge umdrehen
-                    else { // Sortieren
-                        sortiert = sp;
-                        arr.sort(vglFkt_s);
-                    }
-                    for (var z = 0; z < nzeilen; z++) tbdy.appendChild(arr[z][nspalten]); // Sortierte Daten zurückschreiben
-                } // tsort
-
-                // Kopfzeile vorbereiten, iteriert über jede th und erstellt dabei einen Button, methodenaufruf initTableHead
-                for (var i = 0; i < titel.length; i++) initTableHead(i) ;
-
-
-                // Tabelleninhalt in ein Array kopieren
-                for (var z = 0; z < nzeilen; z++) {
-
-                    var zelle = tz[z].getElementsByTagName(\"td\"); // inhalteinerzelle
-                    arr[z] = new Array(nspalten +1);
-
-                    arr[z][nspalten] = tz[z];
-
-                    for (var s = 0; s < nspalten; s++) {
-                        //aufruf von Funktion getData, gibt werit der spalte eas
-                        var zi = getData(zelle[s]);
-                        arr[z][s] = zi ;
-                    }
-                }
-
-            } // tableSort
-
-
-            var initTableSort = function () {
-                //Listet komplette tabelle in sort_Table
-                var sort_Table = document.querySelectorAll(\"table.sortierbar\");
-                //object wird erstellt
-                for (var i = 0; i < sort_Table.length;i++) {
-                    new tableSort(sort_Table[i]);
-                    document.write(tableSort(sort_Table(i)))
-
-
-                }
-            }
-
-            window.addEventListener(\"DOMContentLoaded\", initTableSort, false);
-
-        })();
-        </Script>
-
-
-    ";
+";
         
-        $__internal_a0ebf29c0ecf42f5e43054e1a9b9b71692b8e1901f5159f82446bc154cb796a7->leave($__internal_a0ebf29c0ecf42f5e43054e1a9b9b71692b8e1901f5159f82446bc154cb796a7_prof);
+        $__internal_5525477ff0822c89d69c31cc8f6caf6764878d755a5ac3b6df4e4972a511f3b1->leave($__internal_5525477ff0822c89d69c31cc8f6caf6764878d755a5ac3b6df4e4972a511f3b1_prof);
 
     }
 
     // line 5
     public function block_title($context, array $blocks = array())
     {
-        $__internal_bdd69394881d888cca8471cfa20a1739f2a130052bcea066ee4b038f15663d1c = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_bdd69394881d888cca8471cfa20a1739f2a130052bcea066ee4b038f15663d1c->enter($__internal_bdd69394881d888cca8471cfa20a1739f2a130052bcea066ee4b038f15663d1c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "gaestebuch/eintraege.html.twig"));
+        $__internal_f1375fe3f55fe38411486d81b8b63e03080040e5ba4d9e0704267a9867b63cef = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_f1375fe3f55fe38411486d81b8b63e03080040e5ba4d9e0704267a9867b63cef->enter($__internal_f1375fe3f55fe38411486d81b8b63e03080040e5ba4d9e0704267a9867b63cef_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "gaestebuch/eintraege.html.twig"));
 
         echo "Welcome!";
         
-        $__internal_bdd69394881d888cca8471cfa20a1739f2a130052bcea066ee4b038f15663d1c->leave($__internal_bdd69394881d888cca8471cfa20a1739f2a130052bcea066ee4b038f15663d1c_prof);
-
-    }
-
-    // line 7
-    public function block_javascripts($context, array $blocks = array())
-    {
-        $__internal_6c7f627c41cc6768cb1f9c5794d3e9214be88f88118ac2302ba0a643371b2b32 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_6c7f627c41cc6768cb1f9c5794d3e9214be88f88118ac2302ba0a643371b2b32->enter($__internal_6c7f627c41cc6768cb1f9c5794d3e9214be88f88118ac2302ba0a643371b2b32_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "gaestebuch/eintraege.html.twig"));
-
-        // line 8
-        echo "        <script type=\"text/javascript\" src=\"";
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("lib/bootstrap/JQuery/JQuery.js"), "html", null, true);
-        echo "\"></script>
-        <script type=\"text/javascript\" src=\"";
-        // line 9
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("lib/bootstrap/js/bootstrap.js"), "html", null, true);
-        echo "\"></script>
-
-    ";
-        
-        $__internal_6c7f627c41cc6768cb1f9c5794d3e9214be88f88118ac2302ba0a643371b2b32->leave($__internal_6c7f627c41cc6768cb1f9c5794d3e9214be88f88118ac2302ba0a643371b2b32_prof);
-
-    }
-
-    // line 13
-    public function block_stylesheets($context, array $blocks = array())
-    {
-        $__internal_116b4b86d0bb5fbe7cf12ec66986dc128d256aac3c933722f491a8b0a7ad88eb = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_116b4b86d0bb5fbe7cf12ec66986dc128d256aac3c933722f491a8b0a7ad88eb->enter($__internal_116b4b86d0bb5fbe7cf12ec66986dc128d256aac3c933722f491a8b0a7ad88eb_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "gaestebuch/eintraege.html.twig"));
-
-        // line 14
-        echo "        <!--<link rel=\"icon\" type=\"image/x-icon\" href=\"";
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("favicon.ico"), "html", null, true);
-        echo "\" />-->
-        <link rel=\"stylesheet\" type=\"text/css\" href=\"";
-        // line 15
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("lib/bootstrap/css/bootstrap.css"), "html", null, true);
-        echo "\">
-        <!--<link rel=\"stylesheet\" type=\"text/css\" href=\"";
-        // line 16
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("css/application.css"), "html", null, true);
-        echo "\">
-    <!--<link rel=\"stylesheet\" tyoe=\"text/css\" href=\"";
-        // line 17
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("lib/normalize.css"), "html", null, true);
-        echo "\">-->
-    ";
-        
-        $__internal_116b4b86d0bb5fbe7cf12ec66986dc128d256aac3c933722f491a8b0a7ad88eb->leave($__internal_116b4b86d0bb5fbe7cf12ec66986dc128d256aac3c933722f491a8b0a7ad88eb_prof);
+        $__internal_f1375fe3f55fe38411486d81b8b63e03080040e5ba4d9e0704267a9867b63cef->leave($__internal_f1375fe3f55fe38411486d81b8b63e03080040e5ba4d9e0704267a9867b63cef_prof);
 
     }
 
@@ -377,7 +237,7 @@ class __TwigTemplate_540a0905fcdfea87b7e70272f7fbd0b3d54296068f4044096b603fbc031
 
     public function getDebugInfo()
     {
-        return array (  360 => 17,  356 => 16,  352 => 15,  347 => 14,  341 => 13,  331 => 9,  326 => 8,  320 => 7,  308 => 5,  206 => 94,  190 => 91,  188 => 90,  186 => 89,  184 => 88,  182 => 87,  180 => 86,  178 => 85,  176 => 84,  174 => 83,  172 => 82,  170 => 81,  168 => 80,  166 => 79,  164 => 78,  162 => 77,  160 => 76,  158 => 75,  156 => 74,  154 => 73,  152 => 72,  150 => 71,  148 => 70,  146 => 69,  144 => 68,  142 => 67,  140 => 66,  138 => 65,  136 => 64,  134 => 63,  132 => 62,  123 => 55,  117 => 52,  106 => 44,  99 => 40,  94 => 38,  90 => 37,  86 => 36,  82 => 35,  78 => 33,  61 => 32,  48 => 21,  46 => 20,  43 => 19,  41 => 13,  38 => 12,  36 => 7,  31 => 5,  25 => 1,);
+        return array (  217 => 5,  206 => 85,  190 => 82,  188 => 81,  186 => 80,  184 => 79,  182 => 78,  180 => 77,  178 => 76,  176 => 75,  174 => 74,  172 => 73,  170 => 72,  168 => 71,  166 => 70,  164 => 69,  162 => 68,  160 => 67,  158 => 66,  156 => 65,  154 => 64,  152 => 63,  150 => 62,  148 => 61,  146 => 60,  144 => 59,  142 => 58,  140 => 57,  138 => 56,  136 => 55,  134 => 54,  132 => 53,  123 => 46,  117 => 43,  106 => 35,  99 => 31,  94 => 29,  90 => 28,  86 => 27,  82 => 26,  78 => 25,  73 => 22,  56 => 21,  43 => 10,  41 => 9,  35 => 7,  33 => 6,  29 => 5,  23 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -395,19 +255,8 @@ class __TwigTemplate_540a0905fcdfea87b7e70272f7fbd0b3d54296068f4044096b603fbc031
 <head>
     <meta charset=\"UTF-8\"/>
     <title>{% block title %}Welcome!{% endblock %}</title>
-
-    {% block javascripts %}
-        <script type=\"text/javascript\" src=\"{{ asset('lib/bootstrap/JQuery/JQuery.js') }}\"></script>
-        <script type=\"text/javascript\" src=\"{{ asset('lib/bootstrap/js/bootstrap.js') }}\"></script>
-
-    {% endblock %}
-
-    {% block stylesheets %}
-        <!--<link rel=\"icon\" type=\"image/x-icon\" href=\"{{ asset('favicon.ico') }}\" />-->
-        <link rel=\"stylesheet\" type=\"text/css\" href=\"{{ asset('lib/bootstrap/css/bootstrap.css') }}\">
-        <!--<link rel=\"stylesheet\" type=\"text/css\" href=\"{{ asset('css/application.css') }}\">
-    <!--<link rel=\"stylesheet\" tyoe=\"text/css\" href=\"{{ asset('lib/normalize.css') }}\">-->
-    {% endblock %}
+    {% include '::basic.html.twig' %}
+    <script type=\"text/javascript\" src=\"{{ asset('lib/Javascript/Sort.js') }}\"></script>
 </head>
 {% include '::navigation-loggedin.html.twig' %}
 
@@ -421,19 +270,21 @@ class __TwigTemplate_540a0905fcdfea87b7e70272f7fbd0b3d54296068f4044096b603fbc031
     </thead>
     <tbody>
 
-    {% for event in events %}
+    {% for post in posts %}
+
 
         <tr>
-            <td>{{ event.getName }}</td>
-            <td>{{ event.getMail }}</td>
-            <td>{{ event.getNachricht }}</td>
-            <td><a class=\"btn btn-danger red btn-xs\" data-toggle=\"modal\" data-target=\"#confirm-modal{{ event.id }}\">Löschen</a>
+            <td class=\"hidden-xl-down\">{{ post.getId }}</td>
+            <td>{{ post.getName }}</td>
+            <td>{{ post.getMail }}</td>
+            <td>{{ post.getNachricht }}</td>
+            <td><a class=\"btn btn-danger red btn-xs\" data-toggle=\"modal\" data-target=\"#confirm-modal{{ post.id }}\">Löschen</a>
             </td>
-            <td><a class=\"btn btn-success green btn-xs\" href=\"{{path('post_edit', {'id' : event.id})}}\">Ändern</a>
+            <td><a class=\"btn btn-success green btn-xs\" href=\"{{path('post_edit', {'id' : post.id})}}\">Ändern</a>
             </td>
 
 
-            <div class=\"modal fade confirm-modal\" id=\"confirm-modal{{ event.id }}\" tabindex=\"-1\" role=\"dialog\"
+            <div class=\"modal fade confirm-modal\" id=\"confirm-modal{{ post.id }}\" tabindex=\"-1\" role=\"dialog\"
                  aria-labelledby=\"mySmallModalLabel\">
                 <div class=\"modal-dialog modal-sm\">
                     <div class=\"modal-content\">
@@ -484,117 +335,9 @@ class __TwigTemplate_540a0905fcdfea87b7e70272f7fbd0b3d54296068f4044096b603fbc031
 
     {% endfor %}
     </tbody>
-    <script>
-        ( function () {
-
-            \"use strict\";
-
-            var tableSort = function (tab) {
-                var titel = tab.getElementsByTagName(\"thead\")[0].getElementsByTagName(\"tr\")[0].getElementsByTagName(\"th\");
-                // in titel werden alle Elemente in th gespeichert
-                var tbdy = tab.getElementsByTagName(\"tbody\")[0];
-
-                var tz = tbdy.rows;
-                var nzeilen = tz.length;
-
-                if (nzeilen == 0)
-                    return;
-                var nspalten = tz[0].cells.length;
-
-                var arr = new Array(nzeilen);
-
-                var sortiert = -1;
-
-                //erstellt Buttons mit onclick in var b
-                var initTableHead = function (sp) {
-                    var b = document.createElement(\"button\");
-                    b.type = \"button\";
-                    b.className = \"btn btn-secondary\";
-                    b.innerHTML = titel[sp].innerHTML;
-
-                    b.addEventListener(\"click\", function () { tsort(sp); },false);
-                    titel[sp].innerHTML = \"\";
-                    titel[sp].appendChild(b);
-                }
-
-                //auslesen Tabellenfelder
-                var getData = function (ele) {
-                    return ele.innerHTML;
-                }
+    </table>
 
 
-                var vglFkt_s = function (a, b) {
-                    var as = a[sortiert], bs = b[sortiert];
-                    if (as > bs) return 1;
-                    else return -1;
-                }
-
-                var tsort = function (sp) {
-                    if (sp == sortiert) arr.reverse(); // Tabelle ist schon nach dieser Spalte sortiert, also nur Reihenfolge umdrehen
-                    else { // Sortieren
-                        sortiert = sp;
-                        arr.sort(vglFkt_s);
-                    }
-                    for (var z = 0; z < nzeilen; z++) tbdy.appendChild(arr[z][nspalten]); // Sortierte Daten zurückschreiben
-                } // tsort
-
-                // Kopfzeile vorbereiten, iteriert über jede th und erstellt dabei einen Button, methodenaufruf initTableHead
-                for (var i = 0; i < titel.length; i++) initTableHead(i) ;
-
-
-                // Tabelleninhalt in ein Array kopieren
-                for (var z = 0; z < nzeilen; z++) {
-
-                    var zelle = tz[z].getElementsByTagName(\"td\"); // inhalteinerzelle
-                    arr[z] = new Array(nspalten +1);
-
-                    arr[z][nspalten] = tz[z];
-
-                    for (var s = 0; s < nspalten; s++) {
-                        //aufruf von Funktion getData, gibt werit der spalte eas
-                        var zi = getData(zelle[s]);
-                        arr[z][s] = zi ;
-                    }
-                }
-
-            } // tableSort
-
-
-            var initTableSort = function () {
-                //Listet komplette tabelle in sort_Table
-                var sort_Table = document.querySelectorAll(\"table.sortierbar\");
-                //object wird erstellt
-                for (var i = 0; i < sort_Table.length;i++) {
-                    new tableSort(sort_Table[i]);
-                    document.write(tableSort(sort_Table(i)))
-
-
-                }
-            }
-
-            window.addEventListener(\"DOMContentLoaded\", initTableSort, false);
-
-        })();
-        </Script>
-
-
-    {#
-        <tr>
-            <th scope=\"row\">E-Mail</th>
-    {% for event in events %}
-
-       <td> {{ event.getMail }} </td>
-    {% endfor %}
-            </tr>
-        <tr>
-            <th scope=\"row\">Nachricht</th>
-    {% for event in events %}
-
-       <td>  </td>
-    {% endfor %}
-        </tr>>
-        </tbody>
-        </table>#}
 ", "gaestebuch/eintraege.html.twig", "/Users/lilikovac/Documents/WT3_App/my_project/app/Resources/views/gaestebuch/eintraege.html.twig");
     }
 }

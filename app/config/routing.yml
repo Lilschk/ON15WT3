@@ -19,7 +19,7 @@ guestbook_einträgezeigen:
   defaults: {_controller: AppBundle:Default:show}
 
 task_success:
-  path: /task_success/{Name}/{Mail}/{Nachricht}
+  path: /task_success/{id}
   defaults: {_controller: AppBundle:Default:sucsess}
 
 post_delete:

@@ -15,81 +15,78 @@ class __TwigTemplate_90d45fc9b1c6ecca3a3407caf9a426ea7abb1ea5db4ca966e6a4711c0c5
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_72ba6954b8a9bf7091c58c9bc54a57b7821e8b660adc896305f6497fad1aa559 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_72ba6954b8a9bf7091c58c9bc54a57b7821e8b660adc896305f6497fad1aa559->enter($__internal_72ba6954b8a9bf7091c58c9bc54a57b7821e8b660adc896305f6497fad1aa559_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "registration/registration.html.twig"));
+        $__internal_7056926d725f673734ac3823a8b7cde84c5a007f807fa31a8dbe1e21f3fbfb3b = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_7056926d725f673734ac3823a8b7cde84c5a007f807fa31a8dbe1e21f3fbfb3b->enter($__internal_7056926d725f673734ac3823a8b7cde84c5a007f807fa31a8dbe1e21f3fbfb3b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "registration/registration.html.twig"));
 
         // line 1
-        $this->loadTemplate("::basic.html.twig", "registration/registration.html.twig", 1)->display($context);
+        echo "<head>
+";
         // line 2
-        $this->loadTemplate("::navigation.html.twig", "registration/registration.html.twig", 2)->display($context);
+        $this->loadTemplate("::basic.html.twig", "registration/registration.html.twig", 2)->display($context);
         // line 3
+        echo "<script type=\"text/javascript\" src=\"";
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("lib/Javascript/Validator.js"), "html", null, true);
+        echo "\"></script>
+</head>
+
+";
+        // line 6
+        $this->loadTemplate("::navigation.html.twig", "registration/registration.html.twig", 6)->display($context);
+        // line 7
         echo "
 ";
-        // line 4
+        // line 8
         echo         $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_start', array("attr" => array("class" => "form-group")));
         echo "
 
-<div class=\"form-group\">
 
-    <div class=\"form-group\">
-    <label for=\"Username\">Username</label>
-    ";
-        // line 10
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "username", array()), 'row');
-        echo "
     ";
         // line 11
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "username", array()), 'label');
+        echo "
+    ";
+        // line 12
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "username", array()), 'widget');
         echo "
 
-    </div>
+    ";
+        // line 14
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "email", array()), 'label');
+        echo "
+    ";
+        // line 15
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "email", array()), 'widget');
+        echo "
 
-<div class=\"form-group\">
-    <label for=\"exampleInputEmail1\">Email address</label>
     ";
         // line 17
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "email", array()), 'row');
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "plainPassword", array()), "first", array()), 'label');
         echo "
-    </div>
-<div class=\"form-group\">
-    <label for=\"exampleInputPassword1\">Password</label>
+    ";
+        // line 18
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "plainPassword", array()), "first", array()), 'widget');
+        echo "
+
+
     ";
         // line 21
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "plainPassword", array()), "first", array()), 'row');
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "plainPassword", array()), "second", array()), 'label');
         echo "
-
-    </div>
-
     ";
-        // line 25
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "plainPassword", array()), "second", array()), 'row');
+        // line 22
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "plainPassword", array()), "second", array()), 'widget');
         echo "
 
-<button onclick=\"validateForm()\" type=\"submit\" class=\"btn btn-primary\">Register!</button>
+
 
 ";
-        // line 29
+        // line 26
         echo         $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_end');
         echo "
-    </div>
 
-    <script> function validateForm() {
-            var x = document.forms[\"user\"][\"user[username]\"].value;
-            if (x == null || x == \"\") {
-                alert(\"Name must be filled out\");
-                return false;
-            }
-            var y = document.forms[\"user\"][\"user[email]\"].value
-            if (/^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+\$/.test(y)) {
-                return (true)
-            }
-            alert(\"You have entered an invalid email address!\")
-            return (false)
-
-        }
-    </script>";
+";
         
-        $__internal_72ba6954b8a9bf7091c58c9bc54a57b7821e8b660adc896305f6497fad1aa559->leave($__internal_72ba6954b8a9bf7091c58c9bc54a57b7821e8b660adc896305f6497fad1aa559_prof);
+        $__internal_7056926d725f673734ac3823a8b7cde84c5a007f807fa31a8dbe1e21f3fbfb3b->leave($__internal_7056926d725f673734ac3823a8b7cde84c5a007f807fa31a8dbe1e21f3fbfb3b_prof);
 
     }
 
@@ -105,7 +102,7 @@ class __TwigTemplate_90d45fc9b1c6ecca3a3407caf9a426ea7abb1ea5db4ca966e6a4711c0c5
 
     public function getDebugInfo()
     {
-        return array (  72 => 29,  65 => 25,  58 => 21,  51 => 17,  42 => 11,  38 => 10,  29 => 4,  26 => 3,  24 => 2,  22 => 1,);
+        return array (  84 => 26,  77 => 22,  73 => 21,  67 => 18,  63 => 17,  58 => 15,  54 => 14,  49 => 12,  45 => 11,  39 => 8,  36 => 7,  34 => 6,  27 => 3,  25 => 2,  22 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -118,51 +115,33 @@ class __TwigTemplate_90d45fc9b1c6ecca3a3407caf9a426ea7abb1ea5db4ca966e6a4711c0c5
 
     public function getSourceContext()
     {
-        return new Twig_Source("{% include '::basic.html.twig' %}
+        return new Twig_Source("<head>
+{% include '::basic.html.twig' %}
+<script type=\"text/javascript\" src=\"{{ asset('lib/Javascript/Validator.js') }}\"></script>
+</head>
+
 {% include '::navigation.html.twig' %}
 
 {{ form_start(form, {'attr': {'class': 'form-group'}}) }}
 
-<div class=\"form-group\">
 
-    <div class=\"form-group\">
-    <label for=\"Username\">Username</label>
-    {{ form_row(form.username)  }}
+    {{ form_label(form.username)  }}
     {{ form_widget(form.username) }}
 
-    </div>
+    {{ form_label(form.email)  }}
+    {{ form_widget(form.email) }}
 
-<div class=\"form-group\">
-    <label for=\"exampleInputEmail1\">Email address</label>
-    {{ form_row(form.email) }}
-    </div>
-<div class=\"form-group\">
-    <label for=\"exampleInputPassword1\">Password</label>
-    {{ form_row(form.plainPassword.first) }}
+    {{ form_label(form.plainPassword.first)  }}
+    {{ form_widget(form.plainPassword.first) }}
 
-    </div>
 
-    {{ form_row(form.plainPassword.second) }}
+    {{ form_label(form.plainPassword.second,null)}}
+    {{ form_widget(form.plainPassword.second) }}
 
-<button onclick=\"validateForm()\" type=\"submit\" class=\"btn btn-primary\">Register!</button>
+
 
 {{ form_end(form) }}
-    </div>
 
-    <script> function validateForm() {
-            var x = document.forms[\"user\"][\"user[username]\"].value;
-            if (x == null || x == \"\") {
-                alert(\"Name must be filled out\");
-                return false;
-            }
-            var y = document.forms[\"user\"][\"user[email]\"].value
-            if (/^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+\$/.test(y)) {
-                return (true)
-            }
-            alert(\"You have entered an invalid email address!\")
-            return (false)
-
-        }
-    </script>", "registration/registration.html.twig", "/Users/lilikovac/Documents/WT3_App/my_project/app/Resources/views/registration/registration.html.twig");
+", "registration/registration.html.twig", "/Users/lilikovac/Documents/WT3_App/my_project/app/Resources/views/registration/registration.html.twig");
     }
 }

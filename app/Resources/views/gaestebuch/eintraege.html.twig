@@ -3,19 +3,8 @@
 <head>
     <meta charset="UTF-8"/>
     <title>{% block title %}Welcome!{% endblock %}</title>
-
-    {% block javascripts %}
-        <script type="text/javascript" src="{{ asset('lib/bootstrap/JQuery/JQuery.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('lib/bootstrap/js/bootstrap.js') }}"></script>
-
-    {% endblock %}
-
-    {% block stylesheets %}
-        <!--<link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />-->
-        <link rel="stylesheet" type="text/css" href="{{ asset('lib/bootstrap/css/bootstrap.css') }}">
-        <!--<link rel="stylesheet" type="text/css" href="{{ asset('css/application.css') }}">
-    <!--<link rel="stylesheet" tyoe="text/css" href="{{ asset('lib/normalize.css') }}">-->
-    {% endblock %}
+    {% include '::basic.html.twig' %}
+    <script type="text/javascript" src="{{ asset('lib/Javascript/Sort.js') }}"></script>
 </head>
 {% include '::navigation-loggedin.html.twig' %}
 
@@ -29,19 +18,21 @@
     </thead>
     <tbody>
 
-    {% for event in events %}
+    {% for post in posts %}
+
 
         <tr>
-            <td>{{ event.getName }}</td>
-            <td>{{ event.getMail }}</td>
-            <td>{{ event.getNachricht }}</td>
-            <td><a class="btn btn-danger red btn-xs" data-toggle="modal" data-target="#confirm-modal{{ event.id }}">Löschen</a>
+            <td class="hidden-xl-down">{{ post.getId }}</td>
+            <td>{{ post.getName }}</td>
+            <td>{{ post.getMail }}</td>
+            <td>{{ post.getNachricht }}</td>
+            <td><a class="btn btn-danger red btn-xs" data-toggle="modal" data-target="#confirm-modal{{ post.id }}">Löschen</a>
             </td>
-            <td><a class="btn btn-success green btn-xs" href="{{path('post_edit', {'id' : event.id})}}">Ändern</a>
+            <td><a class="btn btn-success green btn-xs" href="{{path('post_edit', {'id' : post.id})}}">Ändern</a>
             </td>
 
 
-            <div class="modal fade confirm-modal" id="confirm-modal{{ event.id }}" tabindex="-1" role="dialog"
+            <div class="modal fade confirm-modal" id="confirm-modal{{ post.id }}" tabindex="-1" role="dialog"
                  aria-labelledby="mySmallModalLabel">
                 <div class="modal-dialog modal-sm">
                     <div class="modal-content">
@@ -92,114 +83,6 @@
 
     {% endfor %}
     </tbody>
-    <script>
-        ( function () {
-
-            "use strict";
-
-            var tableSort = function (tab) {
-                var titel = tab.getElementsByTagName("thead")[0].getElementsByTagName("tr")[0].getElementsByTagName("th");
-                // in titel werden alle Elemente in th gespeichert
-                var tbdy = tab.getElementsByTagName("tbody")[0];
-
-                var tz = tbdy.rows;
-                var nzeilen = tz.length;
-
-                if (nzeilen == 0)
-                    return;
-                var nspalten = tz[0].cells.length;
-
-                var arr = new Array(nzeilen);
-
-                var sortiert = -1;
-
-                //erstellt Buttons mit onclick in var b
-                var initTableHead = function (sp) {
-                    var b = document.createElement("button");
-                    b.type = "button";
-                    b.className = "btn btn-secondary";
-                    b.innerHTML = titel[sp].innerHTML;
-
-                    b.addEventListener("click", function () { tsort(sp); },false);
-                    titel[sp].innerHTML = "";
-                    titel[sp].appendChild(b);
-                }
-
-                //auslesen Tabellenfelder
-                var getData = function (ele) {
-                    return ele.innerHTML;
-                }
+    </table>
 
 
-                var vglFkt_s = function (a, b) {
-                    var as = a[sortiert], bs = b[sortiert];
-                    if (as > bs) return 1;
-                    else return -1;
-                }
-
-                var tsort = function (sp) {
-                    if (sp == sortiert) arr.reverse(); // Tabelle ist schon nach dieser Spalte sortiert, also nur Reihenfolge umdrehen
-                    else { // Sortieren
-                        sortiert = sp;
-                        arr.sort(vglFkt_s);
-                    }
-                    for (var z = 0; z < nzeilen; z++) tbdy.appendChild(arr[z][nspalten]); // Sortierte Daten zurückschreiben
-                } // tsort
-
-                // Kopfzeile vorbereiten, iteriert über jede th und erstellt dabei einen Button, methodenaufruf initTableHead
-                for (var i = 0; i < titel.length; i++) initTableHead(i) ;
-
-
-                // Tabelleninhalt in ein Array kopieren
-                for (var z = 0; z < nzeilen; z++) {
-
-                    var zelle = tz[z].getElementsByTagName("td"); // inhalteinerzelle
-                    arr[z] = new Array(nspalten +1);
-
-                    arr[z][nspalten] = tz[z];
-
-                    for (var s = 0; s < nspalten; s++) {
-                        //aufruf von Funktion getData, gibt werit der spalte eas
-                        var zi = getData(zelle[s]);
-                        arr[z][s] = zi ;
-                    }
-                }
-
-            } // tableSort
-
-
-            var initTableSort = function () {
-                //Listet komplette tabelle in sort_Table
-                var sort_Table = document.querySelectorAll("table.sortierbar");
-                //object wird erstellt
-                for (var i = 0; i < sort_Table.length;i++) {
-                    new tableSort(sort_Table[i]);
-                    document.write(tableSort(sort_Table(i)))
-
-
-                }
-            }
-
-            window.addEventListener("DOMContentLoaded", initTableSort, false);
-
-        })();
-        </Script>
-
-
-    {#
-        <tr>
-            <th scope="row">E-Mail</th>
-    {% for event in events %}
-
-       <td> {{ event.getMail }} </td>
-    {% endfor %}
-            </tr>
-        <tr>
-            <th scope="row">Nachricht</th>
-    {% for event in events %}
-
-       <td>  </td>
-    {% endfor %}
-        </tr>>
-        </tbody>
-        </table>#}

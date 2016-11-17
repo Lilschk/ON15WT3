@@ -2,12 +2,18 @@
 <html>
 <head>
     <meta charset="UTF-8" />
+    {% include '::basic.html.twig' %}
+    <script type="text/javascript" src="{{ asset('lib/Javascript/Validator.js') }}"></script>
 </head>
 <body>
 
+
 {% include '::gaestebuch/gaestebuch.html.twig' %}
+
 {{ form_start(form) }}
 {{ form_widget(form) }}
 {{ form_end(form) }}
+
+
 </body>
 </html>

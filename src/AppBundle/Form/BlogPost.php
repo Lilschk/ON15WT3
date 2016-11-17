@@ -15,10 +15,13 @@ class BlogPost extends AbstractType {
 public function buildForm(FormBuilderInterface $builder, array $options)
 {
 $builder
-    ->add('Name', TextType::class)
-    ->add('Mail', EmailType::class)
-    ->add('Nachricht', TextareaType::class)
-    ->add('save', SubmitType::class, array('label' => 'Nachricht abschicken'))
+    ->add('Name', TextType::class,array(
+      'attr' => array('class'=>'form-control','onblur'=>'validateName("blog_post_Name")')))
+    ->add('Mail', EmailType::class,array(
+        'attr' => array('class'=>'form-control','onblur'=>'validateEmail("blog_post_Mail")')))
+    ->add('Nachricht', TextareaType::class,array(
+        'attr' => array('class'=>'form-control')))
+    ->add('save', SubmitType::class, array('label' => 'Nachricht abschicken', 'attr'=>array('class'=>'btn btn-primary')))
 ;
 }
 }

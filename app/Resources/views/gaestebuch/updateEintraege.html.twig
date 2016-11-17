@@ -1,6 +1,7 @@
-{% include '::basic.html.twig' %}
+
 {% include '::navigation-loggedin.html.twig' %}
-{% use "form_div_layout.html.twig" %}
+{% include '::basic.html.twig' %}
+<script type="text/javascript" src="{{ asset('lib/Javascript/Validator.js') }}"></script>
 
 
 {{ form_start(form) }}

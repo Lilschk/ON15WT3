@@ -6,8 +6,8 @@
  * Time: 16:18
  */
 namespace AppBundle\Entity;
-use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity
@@ -37,10 +37,14 @@ class Post
      */
     protected $Name;
 
-    //protected $dueDate;
 
     /**
      * @Assert\NotBlank()
+     * @Assert\Email(
+     *
+     *     message = "The email '{{ value }}' is not a valid email.",
+     *     checkMX = true
+     *     )
      * @ORM\column(type="string")
      */
     protected $Mail;

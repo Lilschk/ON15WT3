@@ -17,8 +17,8 @@ class __TwigTemplate_6dcb348e242f12413587ff8469281092533061ca8921b57e55771bf66d2
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_fabc8314668ef7b7b16634707efbbee36248dd2e6beddbb1ea6ded6de37cf50f = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_fabc8314668ef7b7b16634707efbbee36248dd2e6beddbb1ea6ded6de37cf50f->enter($__internal_fabc8314668ef7b7b16634707efbbee36248dd2e6beddbb1ea6ded6de37cf50f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "gaestebuch/formdone.html.twig"));
+        $__internal_120bf6a314865e247f35b47e3ee6b10d3d4a9c0c9167713eba7706fe5d559447 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_120bf6a314865e247f35b47e3ee6b10d3d4a9c0c9167713eba7706fe5d559447->enter($__internal_120bf6a314865e247f35b47e3ee6b10d3d4a9c0c9167713eba7706fe5d559447_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "gaestebuch/formdone.html.twig"));
 
         // line 1
         echo "<!DOCTYPE html>
@@ -33,23 +33,15 @@ class __TwigTemplate_6dcb348e242f12413587ff8469281092533061ca8921b57e55771bf66d2
         // line 6
         $this->displayBlock('stylesheets', $context, $blocks);
         // line 7
-        echo "    <link rel=\"icon\" type=\"image/x-icon\" href=\"";
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("favicon.ico"), "html", null, true);
-        echo "\" />
-    <link rel=\"stylesheet\" type=\"text/css\" href=\"";
+        echo "    ";
+        $this->loadTemplate("::basic.html.twig", "gaestebuch/formdone.html.twig", 7)->display($context);
         // line 8
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("lib/bootstrap/css/bootstrap.css"), "html", null, true);
-        echo "\">
-    <link rel=\"stylesheet\" type=\"text/css\" href=\"";
-        // line 9
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("css/application.css"), "html", null, true);
-        echo "\">
-
+        echo "
 <body>
 ";
-        // line 12
-        $this->loadTemplate("::navigation-loggedin.html.twig", "gaestebuch/formdone.html.twig", 12)->display($context);
-        // line 13
+        // line 10
+        $this->loadTemplate("::navigation-loggedin.html.twig", "gaestebuch/formdone.html.twig", 10)->display($context);
+        // line 11
         echo "
 
 <div class=\"container\">
@@ -57,45 +49,45 @@ class __TwigTemplate_6dcb348e242f12413587ff8469281092533061ca8921b57e55771bf66d2
         <h1 class=\"display-1\">Gästebuch</h1>
         <p class=\"lead page-description\">Sie haben eine Nachricht geschrieben.</p>
         <p> ";
-        // line 19
-        echo twig_escape_filter($this->env, (isset($context["Name"]) ? $context["Name"] : $this->getContext($context, "Name")), "html", null, true);
+        // line 17
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["post"]) ? $context["post"] : $this->getContext($context, "post")), "Name", array()), "html", null, true);
         echo " hat eine Nachricht geschrieben:</p>
         <p>";
-        // line 20
-        echo twig_escape_filter($this->env, (isset($context["Mail"]) ? $context["Mail"] : $this->getContext($context, "Mail")), "html", null, true);
+        // line 18
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["post"]) ? $context["post"] : $this->getContext($context, "post")), "Mail", array()), "html", null, true);
         echo "</p>
         <p>";
-        // line 21
-        echo twig_escape_filter($this->env, (isset($context["Nachricht"]) ? $context["Nachricht"] : $this->getContext($context, "Nachricht")), "html", null, true);
+        // line 19
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["post"]) ? $context["post"] : $this->getContext($context, "post")), "Nachricht", array()), "html", null, true);
         echo "</p>
         <p>Dankeschön für Ihren Beitrag!</p>
     </div>
 </div>";
         
-        $__internal_fabc8314668ef7b7b16634707efbbee36248dd2e6beddbb1ea6ded6de37cf50f->leave($__internal_fabc8314668ef7b7b16634707efbbee36248dd2e6beddbb1ea6ded6de37cf50f_prof);
+        $__internal_120bf6a314865e247f35b47e3ee6b10d3d4a9c0c9167713eba7706fe5d559447->leave($__internal_120bf6a314865e247f35b47e3ee6b10d3d4a9c0c9167713eba7706fe5d559447_prof);
 
     }
 
     // line 5
     public function block_title($context, array $blocks = array())
     {
-        $__internal_1d5b8923cc99f246da618160547e1aca0d075b777e973d662f8e71df75d5aceb = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_1d5b8923cc99f246da618160547e1aca0d075b777e973d662f8e71df75d5aceb->enter($__internal_1d5b8923cc99f246da618160547e1aca0d075b777e973d662f8e71df75d5aceb_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "gaestebuch/formdone.html.twig"));
+        $__internal_192779f689baaac919d386e3927858d79f2497498e05edde9f0d22030eba8c7f = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_192779f689baaac919d386e3927858d79f2497498e05edde9f0d22030eba8c7f->enter($__internal_192779f689baaac919d386e3927858d79f2497498e05edde9f0d22030eba8c7f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "gaestebuch/formdone.html.twig"));
 
         echo "You're logged in!";
         
-        $__internal_1d5b8923cc99f246da618160547e1aca0d075b777e973d662f8e71df75d5aceb->leave($__internal_1d5b8923cc99f246da618160547e1aca0d075b777e973d662f8e71df75d5aceb_prof);
+        $__internal_192779f689baaac919d386e3927858d79f2497498e05edde9f0d22030eba8c7f->leave($__internal_192779f689baaac919d386e3927858d79f2497498e05edde9f0d22030eba8c7f_prof);
 
     }
 
     // line 6
     public function block_stylesheets($context, array $blocks = array())
     {
-        $__internal_f32057c95f47fbea31fcb94203db39979967e5fb17a26960a7b3d3b11d4d30a7 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_f32057c95f47fbea31fcb94203db39979967e5fb17a26960a7b3d3b11d4d30a7->enter($__internal_f32057c95f47fbea31fcb94203db39979967e5fb17a26960a7b3d3b11d4d30a7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "gaestebuch/formdone.html.twig"));
+        $__internal_f01f5685f7579104bfc97ed38d35b2dcb4b215aab6fc0d038fc541a307afdcfd = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_f01f5685f7579104bfc97ed38d35b2dcb4b215aab6fc0d038fc541a307afdcfd->enter($__internal_f01f5685f7579104bfc97ed38d35b2dcb4b215aab6fc0d038fc541a307afdcfd_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "gaestebuch/formdone.html.twig"));
 
         
-        $__internal_f32057c95f47fbea31fcb94203db39979967e5fb17a26960a7b3d3b11d4d30a7->leave($__internal_f32057c95f47fbea31fcb94203db39979967e5fb17a26960a7b3d3b11d4d30a7_prof);
+        $__internal_f01f5685f7579104bfc97ed38d35b2dcb4b215aab6fc0d038fc541a307afdcfd->leave($__internal_f01f5685f7579104bfc97ed38d35b2dcb4b215aab6fc0d038fc541a307afdcfd_prof);
 
     }
 
@@ -111,7 +103,7 @@ class __TwigTemplate_6dcb348e242f12413587ff8469281092533061ca8921b57e55771bf66d2
 
     public function getDebugInfo()
     {
-        return array (  92 => 6,  80 => 5,  69 => 21,  65 => 20,  61 => 19,  53 => 13,  51 => 12,  45 => 9,  41 => 8,  36 => 7,  34 => 6,  30 => 5,  24 => 1,);
+        return array (  84 => 6,  72 => 5,  61 => 19,  57 => 18,  53 => 17,  45 => 11,  43 => 10,  39 => 8,  36 => 7,  34 => 6,  30 => 5,  24 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -130,9 +122,7 @@ class __TwigTemplate_6dcb348e242f12413587ff8469281092533061ca8921b57e55771bf66d2
     <meta charset=\"UTF-8\" />
     <title>{% block title %}You're logged in!{% endblock %}</title>
     {% block stylesheets %}{% endblock %}
-    <link rel=\"icon\" type=\"image/x-icon\" href=\"{{ asset('favicon.ico') }}\" />
-    <link rel=\"stylesheet\" type=\"text/css\" href=\"{{ asset('lib/bootstrap/css/bootstrap.css') }}\">
-    <link rel=\"stylesheet\" type=\"text/css\" href=\"{{ asset('css/application.css') }}\">
+    {% include '::basic.html.twig' %}
 
 <body>
 {% include '::navigation-loggedin.html.twig' %}
@@ -142,9 +132,9 @@ class __TwigTemplate_6dcb348e242f12413587ff8469281092533061ca8921b57e55771bf66d2
     <div class=\"page-header\">
         <h1 class=\"display-1\">Gästebuch</h1>
         <p class=\"lead page-description\">Sie haben eine Nachricht geschrieben.</p>
-        <p> {{  Name }} hat eine Nachricht geschrieben:</p>
-        <p>{{ Mail }}</p>
-        <p>{{ Nachricht }}</p>
+        <p> {{  post.Name }} hat eine Nachricht geschrieben:</p>
+        <p>{{ post.Mail }}</p>
+        <p>{{ post.Nachricht }}</p>
         <p>Dankeschön für Ihren Beitrag!</p>
     </div>
 </div>", "gaestebuch/formdone.html.twig", "/Users/lilikovac/Documents/WT3_App/my_project/app/Resources/views/gaestebuch/formdone.html.twig");

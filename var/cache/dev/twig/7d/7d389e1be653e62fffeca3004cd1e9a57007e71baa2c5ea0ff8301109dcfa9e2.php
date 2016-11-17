@@ -9,73 +9,67 @@ class __TwigTemplate_fd9ec8d747cd372e5020564df7dea508589fa92ff8ff35218d2f63ba8fe
 
         $this->parent = false;
 
-        $_trait_0 = $this->loadTemplate("form_div_layout.html.twig", "gaestebuch/UpdateEintraege.html.twig", 3);
-        // line 3
-        if (!$_trait_0->isTraitable()) {
-            throw new Twig_Error_Runtime('Template "'."form_div_layout.html.twig".'" cannot be used as a trait.');
-        }
-        $_trait_0_blocks = $_trait_0->getBlocks();
-
-        $this->traits = $_trait_0_blocks;
-
-        $this->blocks = array_merge(
-            $this->traits,
-            array(
-            )
+        $this->blocks = array(
         );
     }
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_9141bd7d93d2dc4fd289577413f26704e3d92ae4afed2c28c1f0e07cf73c78b7 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_9141bd7d93d2dc4fd289577413f26704e3d92ae4afed2c28c1f0e07cf73c78b7->enter($__internal_9141bd7d93d2dc4fd289577413f26704e3d92ae4afed2c28c1f0e07cf73c78b7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "gaestebuch/UpdateEintraege.html.twig"));
+        $__internal_5d339ffceafdc11bb9bbe3108f6cc64fe0619a96acd783cdc3bdf29befe48261 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_5d339ffceafdc11bb9bbe3108f6cc64fe0619a96acd783cdc3bdf29befe48261->enter($__internal_5d339ffceafdc11bb9bbe3108f6cc64fe0619a96acd783cdc3bdf29befe48261_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "gaestebuch/UpdateEintraege.html.twig"));
 
         // line 1
-        $this->loadTemplate("::basic.html.twig", "gaestebuch/UpdateEintraege.html.twig", 1)->display($context);
+        echo "
+";
         // line 2
         $this->loadTemplate("::navigation-loggedin.html.twig", "gaestebuch/UpdateEintraege.html.twig", 2)->display($context);
+        // line 3
+        $this->loadTemplate("::basic.html.twig", "gaestebuch/UpdateEintraege.html.twig", 3)->display($context);
         // line 4
-        echo "
+        echo "<script type=\"text/javascript\" src=\"";
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("lib/Javascript/Validator.js"), "html", null, true);
+        echo "\"></script>
+
 
 ";
-        // line 6
+        // line 7
         echo         $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_start');
         echo "
 
 ";
-        // line 8
+        // line 9
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "Name", array()), 'label');
         echo "
 
 ";
-        // line 10
+        // line 11
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "Name", array()), 'widget', array("value" => $this->getAttribute((isset($context["post"]) ? $context["post"] : $this->getContext($context, "post")), "name", array())));
         echo "
 
 ";
-        // line 12
+        // line 13
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "Mail", array()), 'label');
         echo "
 ";
-        // line 13
+        // line 14
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "Mail", array()), 'widget', array("value" => $this->getAttribute((isset($context["post"]) ? $context["post"] : $this->getContext($context, "post")), "mail", array())));
         echo "
 
 
 ";
-        // line 16
+        // line 17
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "Nachricht", array()), 'label');
         echo "
 ";
-        // line 17
+        // line 18
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "Nachricht", array()), 'widget', array("value" => $this->getAttribute((isset($context["post"]) ? $context["post"] : $this->getContext($context, "post")), "nachricht", array())));
         echo "
 
 ";
-        // line 19
+        // line 20
         echo         $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_end');
         
-        $__internal_9141bd7d93d2dc4fd289577413f26704e3d92ae4afed2c28c1f0e07cf73c78b7->leave($__internal_9141bd7d93d2dc4fd289577413f26704e3d92ae4afed2c28c1f0e07cf73c78b7_prof);
+        $__internal_5d339ffceafdc11bb9bbe3108f6cc64fe0619a96acd783cdc3bdf29befe48261->leave($__internal_5d339ffceafdc11bb9bbe3108f6cc64fe0619a96acd783cdc3bdf29befe48261_prof);
 
     }
 
@@ -91,7 +85,7 @@ class __TwigTemplate_fd9ec8d747cd372e5020564df7dea508589fa92ff8ff35218d2f63ba8fe
 
     public function getDebugInfo()
     {
-        return array (  76 => 19,  71 => 17,  67 => 16,  61 => 13,  57 => 12,  52 => 10,  47 => 8,  42 => 6,  38 => 4,  36 => 2,  34 => 1,  14 => 3,);
+        return array (  70 => 20,  65 => 18,  61 => 17,  55 => 14,  51 => 13,  46 => 11,  41 => 9,  36 => 7,  29 => 4,  27 => 3,  25 => 2,  22 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -104,9 +98,10 @@ class __TwigTemplate_fd9ec8d747cd372e5020564df7dea508589fa92ff8ff35218d2f63ba8fe
 
     public function getSourceContext()
     {
-        return new Twig_Source("{% include '::basic.html.twig' %}
+        return new Twig_Source("
 {% include '::navigation-loggedin.html.twig' %}
-{% use \"form_div_layout.html.twig\" %}
+{% include '::basic.html.twig' %}
+<script type=\"text/javascript\" src=\"{{ asset('lib/Javascript/Validator.js') }}\"></script>
 
 
 {{ form_start(form) }}
