@@ -45,7 +45,7 @@ class __TwigTemplate_e8703ac657abcc4a267d17729c0bc3837de675eb86502bb650c9b2806ca
 <body>
 ";
         // line 12
-        $this->loadTemplate("::navigation-loggedin.html.twig", ":gaestebuch:gaestebuch.html.twig", 12)->display($context);
+        $this->loadTemplate("::navigation.html.twig", ":gaestebuch:gaestebuch.html.twig", 12)->display($context);
         // line 13
         echo "
 

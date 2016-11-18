@@ -43,7 +43,7 @@ class __TwigTemplate_d1cb06a2f5be328f9fb8fc49d7253793ff1c136247aa7151b507a841264
         echo "</head>
 ";
         // line 20
-        $this->loadTemplate("::navigation-loggedin.html.twig", "gaestebuch/eintraege.html.twig", 20)->display($context);
+        $this->loadTemplate("::navigation.html.twig", "gaestebuch/eintraege.html.twig", 20)->display($context);
         // line 21
         echo "
 <table class=\"table\">
@@ -237,7 +237,7 @@ class __TwigTemplate_d1cb06a2f5be328f9fb8fc49d7253793ff1c136247aa7151b507a841264
     <!--<link rel=\"stylesheet\" tyoe=\"text/css\" href=\"{{ asset('lib/normalize.css') }}\">-->
     {% endblock %}
 </head>
-{% include '::navigation-loggedin.html.twig' %}
+{% include '::navigation.html.twig' %}
 
 <table class=\"table\">
     <tbody>

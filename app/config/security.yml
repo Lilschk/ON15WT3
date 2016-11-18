@@ -6,24 +6,29 @@ security:
 
    # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
    providers:
-           our_db_provider:
-               entity:
-                   class: AppBundle:User
-                   property: username
+       our_users:
+           entity: { class: AppBundle\Entity\User, property: username }
 
    firewalls:
        # disables authentication for assets and the profiler, adapt it according to your needs
-       #dev:
-           #pattern: ^/(_(profiler|wdt)|css|images|js)/
-           #security: false
+       dev:
+           pattern: ^/(_(profiler|wdt)|css|images|js)/
+           security: false
+
        main:
-                   pattern:    /login
-                   http_basic: ~
-                   provider: our_db_provider
+                   anonymous: ~
+                   guard:
+                                   authenticators:
+                                       - app.security.login_form_authenticator
                    logout:
-                      path:   /logout
-                      target: /
-                      invalidate_session: true
+                                   path: /logout
+#                   pattern:    /login
+#                   http_basic: ~
+#                   provider: our_db_provider
+#                   logout:
+#                      path:   /logout
+#                      target: /
+#                      invalidate_session: true
 
 
 

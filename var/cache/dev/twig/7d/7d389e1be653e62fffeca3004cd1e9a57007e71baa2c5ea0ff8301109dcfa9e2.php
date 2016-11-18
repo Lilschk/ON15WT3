@@ -22,7 +22,7 @@ class __TwigTemplate_fd9ec8d747cd372e5020564df7dea508589fa92ff8ff35218d2f63ba8fe
         echo "
 ";
         // line 2
-        $this->loadTemplate("::navigation-loggedin.html.twig", "gaestebuch/UpdateEintraege.html.twig", 2)->display($context);
+        $this->loadTemplate("::navigation.html.twig", "gaestebuch/UpdateEintraege.html.twig", 2)->display($context);
         // line 3
         $this->loadTemplate("::basic.html.twig", "gaestebuch/UpdateEintraege.html.twig", 3)->display($context);
         // line 4
@@ -99,7 +99,7 @@ class __TwigTemplate_fd9ec8d747cd372e5020564df7dea508589fa92ff8ff35218d2f63ba8fe
     public function getSourceContext()
     {
         return new Twig_Source("
-{% include '::navigation-loggedin.html.twig' %}
+{% include '::navigation.html.twig' %}
 {% include '::basic.html.twig' %}
 <script type=\"text/javascript\" src=\"{{ asset('lib/Javascript/Validator.js') }}\"></script>
 

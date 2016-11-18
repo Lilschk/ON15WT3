@@ -1,6 +1,7 @@
 <?php
 namespace AppBundle\Controller;
 
+use AppBundle\Form\UserLoggin;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -22,14 +23,21 @@ class SecurityController extends Controller
         // last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
 
+        $form = $this->createForm(UserLoggin::class, [
+            '_username' => $lastUsername,
+        ]);
+
         return $this->render('security/login.html.twig', array(
-            'last_username' => $lastUsername,
+            'form' => $form->createView(),
             'error'         => $error,
         ));
     }
 
-    public function logoutAction(Request $request)
+    /**
+     * @Route("/logout", name="logout")
+     */
+    public function logoutAction()
     {
-        return $this->render('security/logout.html.twig');
+        throw new \Exception('this should not be reached!');
     }
 }

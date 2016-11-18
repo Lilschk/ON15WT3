@@ -100,11 +100,6 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        // logout
-        if ($pathinfo === '/logout') {
-            return array('_route' => 'logout');
-        }
-
         // user_registration
         if ($pathinfo === '/register') {
             return array (  '_controller' => 'AppBundle\\Controller\\RegistrationController::registerAction',  '_route' => 'user_registration',);
@@ -116,36 +111,49 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return $this->redirect($pathinfo.'/', 'homepage');
             }
 
-            return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);
+            return array (  '_controller' => 'AppBundle\\Controller\\PostController::indexAction',  '_route' => 'homepage',);
         }
 
         if (0 === strpos($pathinfo, '/login')) {
             // guestbook_logged
             if ($pathinfo === '/login/loggedin') {
-                return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::loggedinAction',  '_route' => 'guestbook_logged',);
+                return array (  '_controller' => 'AppBundle\\Controller\\PostController::loggedinAction',  '_route' => 'guestbook_logged',);
             }
 
             // guestbook_einträgezeigen
             if ($pathinfo === '/login/showpost') {
-                return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::showAction',  '_route' => 'guestbook_einträgezeigen',);
+                return array (  '_controller' => 'AppBundle\\Controller\\PostController::showAction',  '_route' => 'guestbook_einträgezeigen',);
             }
 
         }
 
         // task_success
         if (0 === strpos($pathinfo, '/task_success') && preg_match('#^/task_success/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'task_success')), array (  '_controller' => 'AppBundle\\Controller\\DefaultController::sucsessAction',));
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'task_success')), array (  '_controller' => 'AppBundle\\Controller\\PostController::sucsessAction',));
         }
 
         if (0 === strpos($pathinfo, '/post')) {
             // post_delete
             if (0 === strpos($pathinfo, '/postdelete') && preg_match('#^/postdelete/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'post_delete')), array (  '_controller' => 'AppBundle\\Controller\\DefaultController::deleteAction',));
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'post_delete')), array (  '_controller' => 'AppBundle\\Controller\\PostController::deleteAction',));
             }
 
             // post_edit
             if (0 === strpos($pathinfo, '/postupdate') && preg_match('#^/postupdate/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'post_edit')), array (  '_controller' => 'AppBundle\\Controller\\DefaultController::editAction',));
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'post_edit')), array (  '_controller' => 'AppBundle\\Controller\\PostController::editAction',));
+            }
+
+        }
+
+        if (0 === strpos($pathinfo, '/log')) {
+            // login
+            if ($pathinfo === '/login') {
+                return array (  '_controller' => 'AppBundle\\Controller\\SecurityController::loginAction',  '_route' => 'login',);
+            }
+
+            // logout
+            if ($pathinfo === '/logout') {
+                return array (  '_controller' => 'AppBundle\\Controller\\SecurityController::logoutAction',  '_route' => 'logout',);
             }
 
         }

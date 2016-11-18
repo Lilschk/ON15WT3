@@ -3,11 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <!--<link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />-->
-        <link rel="stylesheet" type="text/css" href="{{ asset('lib/bootstrap/css/bootstrap.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/application.css') }}">
-        <!--<link rel="stylesheet" tyoe="text/css" href="{{ asset('lib/normalize.css') }}">-->
+        {%  include '::basic.html.twig' %}
     </head>
 
     <body>
@@ -18,16 +14,11 @@
                 <h1 class="display-1">Gästebuch</h1>
                 <p class="lead page-description">Schreibe einen Beitrag.</p>
             </div>
-            <a class="btn btn-primary btn-lg btn-block" href="{{ path('guestbook_logged') }}" role="button">Einloggen!</a>
+            <a class="btn btn-primary btn-lg btn-block" href="{{ path('login') }}" role="button">Einloggen!</a>
 
-            <!-- <div class="row">
-                <div class="col-sm-8 page-main">
+
                     {% block body %}{% endblock %}
-                </div>
 
-
-            </div>
-        </div>-->
 
         <footer class="page-footer">
 

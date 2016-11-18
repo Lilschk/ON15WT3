@@ -38,7 +38,7 @@ class __TwigTemplate_540a0905fcdfea87b7e70272f7fbd0b3d54296068f4044096b603fbc031
 </head>
 ";
         // line 9
-        $this->loadTemplate("::navigation-loggedin.html.twig", "gaestebuch/eintraege.html.twig", 9)->display($context);
+        $this->loadTemplate("::navigation.html.twig", "gaestebuch/eintraege.html.twig", 9)->display($context);
         // line 10
         echo "
 <table class=\"table sortierbar\">
@@ -258,7 +258,7 @@ class __TwigTemplate_540a0905fcdfea87b7e70272f7fbd0b3d54296068f4044096b603fbc031
     {% include '::basic.html.twig' %}
     <script type=\"text/javascript\" src=\"{{ asset('lib/Javascript/Sort.js') }}\"></script>
 </head>
-{% include '::navigation-loggedin.html.twig' %}
+{% include '::navigation.html.twig' %}
 
 <table class=\"table sortierbar\">
     <thead>

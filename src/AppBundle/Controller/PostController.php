@@ -11,7 +11,8 @@ use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Post;
 use AppBundle\Form\BlogPost;
 
-class DefaultController extends Controller
+
+class PostController extends Controller
 {
     /**
      * @Route("/", name="homepage")
@@ -110,7 +111,7 @@ class DefaultController extends Controller
     public function editAction($id, Request $request)
     {
 
-        $form = $this->createForm(BlogPost::class);
+       $form = $this->createForm(BlogPost::class);
         $em = $this->getDoctrine()->getManager();
         $post = $em->getRepository('AppBundle:Post')->find($id);
         $form->handleRequest($request);
@@ -131,7 +132,10 @@ class DefaultController extends Controller
     }
         return $this->render('gaestebuch/UpdateEintraege.html.twig', array('post'=>$post,
             'form' => $form->createView(),));
-    }}
+    }
+
+
+}
 
 
 

@@ -1,6 +1,6 @@
 <?php
 
-/* ::navigation-loggedin.html.twig */
+/* ::navigation.html.twig */
 class __TwigTemplate_bd190785deb358e21c89110065bb3ded9fd0cd5f25f88b5eb4ba196b483c9969 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -16,7 +16,7 @@ class __TwigTemplate_bd190785deb358e21c89110065bb3ded9fd0cd5f25f88b5eb4ba196b483
     protected function doDisplay(array $context, array $blocks = array())
     {
         $__internal_4e4f3e808e2ded7a25128818cafe1ee23f29ab02ff8c7e4bccac1d1546851ba7 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_4e4f3e808e2ded7a25128818cafe1ee23f29ab02ff8c7e4bccac1d1546851ba7->enter($__internal_4e4f3e808e2ded7a25128818cafe1ee23f29ab02ff8c7e4bccac1d1546851ba7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "::navigation-loggedin.html.twig"));
+        $__internal_4e4f3e808e2ded7a25128818cafe1ee23f29ab02ff8c7e4bccac1d1546851ba7->enter($__internal_4e4f3e808e2ded7a25128818cafe1ee23f29ab02ff8c7e4bccac1d1546851ba7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "::navigation.html.twig"));
 
         // line 1
         echo "
@@ -47,7 +47,7 @@ class __TwigTemplate_bd190785deb358e21c89110065bb3ded9fd0cd5f25f88b5eb4ba196b483
 
     public function getTemplateName()
     {
-        return "::navigation-loggedin.html.twig";
+        return "::navigation.html.twig";
     }
 
     public function isTraitable()
@@ -81,6 +81,6 @@ class __TwigTemplate_bd190785deb358e21c89110065bb3ded9fd0cd5f25f88b5eb4ba196b483
                 </ul>
         </nav>
 </nav>
-", "::navigation-loggedin.html.twig", "/var/www/public/my_project/app/Resources/views/navigation-loggedin.html.twig");
+", "::navigation.html.twig", "/var/www/public/my_project/app/Resources/views/navigation.html.twig");
     }
 }
