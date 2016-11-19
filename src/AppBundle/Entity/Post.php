@@ -13,6 +13,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORM\Entity
  * @ORM\Table(name="Post")
  * @package AppBundle\Entity
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\PostRepo")
  */
 class Post
 {

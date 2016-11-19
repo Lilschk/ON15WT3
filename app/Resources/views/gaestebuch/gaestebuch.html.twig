@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8" />
-    <title>{% block title %}You're logged in!{% endblock %}</title>
-    {% block stylesheets %}{% endblock %}
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('lib/bootstrap/css/bootstrap.css') }}">
+
+{% include '::basic.html.twig' %}
 
 <body>
 {% include '::navigation.html.twig' %}
@@ -17,53 +11,3 @@
         <p class="lead page-description">Sie sind eingeloggt.</p>
     </div>
 </div>
-
-{#
-<form action="gb.php" method="get">
-
-    <table class="table">
-        <tr>
-            <td>Name:<input name="name" type="text" size="20" maxlength="30">
-            </td>
-        </tr><!--Erstellen der Textfelder-->
-        <tr>
-            <td colspan="2">Mail:<input name="mail" type="text" size="60" maxlength="30"></td></tr>
-
-
-
-        <tr><td><p>Ihr Text:<br>
-                    <textarea name="beitrag" cols="50" rows="10"></textarea></p><td><!--Erstellen der Textarea-->
-                <b>
-                    <?php
-		$database ="Gaestebuch";
-		$host ="localhost";
-		$user = "Christoph";
-		$user_Beitrag = "root";
-		$dbID = mysql_connect($host,$user_Beitrag) or die(mysql_error());//Einloggen in mysql
-	mysql_select_db($database);
-
-	$result = mysql_query("select * from beitrag");
-
-	?>
-                    <textarea readonly name="fertig" cols="90" rows= "20" >
-		<?php
-		echo "\n";
-
-		for($i=0; $i < mysql_num_rows($result);$i++)//Ausgabe
-		{
-			echo "Nutzer: ";
-			$row= mysql_fetch_row($result);
-			for($j=0; $j < mysql_num_fields($result);$j++){
-				echo " ".$row[$j]." ";
-
-			}
-			echo "\n";
-		}
-		?>
-
-                    </textarea><td><tr>
-
-        <tr><td><input type="submit"><!--Button zum Daten �bermitteln-->
-                <input type="reset" name="loeschen" value="L�schen"></td></tr><!--Resetbutton -->
-
-    </table>#}

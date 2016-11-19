@@ -34,6 +34,10 @@ logout:
   path: /logout
   defaults: {_controller: AppBundle:Security:logout}
 
+search:
+  path: /livesearch
+  defaults: {_controller: AppBundle:Post:search}
+
 
 
 

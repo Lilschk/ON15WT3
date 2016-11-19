@@ -6,18 +6,21 @@ namespace AppBundle\Controller;
 
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Post;
 use AppBundle\Form\BlogPost;
 
+use Symfony\Component\Serializer\Serializer;
+use Symfony\Component\Serializer\Encoder\XmlEncoder;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Normalizer\GetSetMethodNormalizer;
+use Symfony\Component\HttpFoundation\Response;
+
 
 class PostController extends Controller
 {
-    /**
-     * @Route("/", name="homepage")
-     */
-    public function indexAction(Request $request)
+
+    public function indexAction()
     {
         return $this->render('base.html.twig');
     }
@@ -60,7 +63,7 @@ class PostController extends Controller
         return $this->render('gaestebuch/formdone.html.twig', array('post'=>$post));
     }
 
-    public function showAction(Request $request){
+    public function showAction(){
         $deleteForms = [];
 
         $posts = $this->getDoctrine()
@@ -73,12 +76,7 @@ class PostController extends Controller
 
     }
 
-    /**
-     * Deletes a Apps entity.
-     *
-     * @Route("applicationdelete/{id}", name="application_delete")
 
-     */
     public function deleteAction(Request $request, Post $post){
         $deleteForm = $this->createDeleteForm($post);
         $deleteForm->handleRequest($request);
@@ -92,13 +90,6 @@ class PostController extends Controller
         return $this->redirectToRoute("guestbook_einträgezeigen");
     }
 
-    /**
-     * Creates a form to delete a User entity.
-     *
-     * @param Apps $apps The Apps entity
-     *
-     * @return \Symfony\Component\Form\Form The form
-     */
     private function createDeleteForm(Post $post)
     {
         return $this->createFormBuilder()
@@ -134,8 +125,45 @@ class PostController extends Controller
             'form' => $form->createView(),));
     }
 
+    public function searchAction (Request $request){
+
+        $searchString = $request->get('searchText');
+
+        $repository = $this->getDoctrine()->getRepository('AppBundle\Entity\Post');
+        $posts = $repository->findByLetters($searchString);
+
+        $data = array("Posts" => array());
+
+        foreach ($posts as $post) {
+            $data["Restaurants"][] = $this->createPostArray($post);
+        }
+
+
+
+            $encoders = array(new XmlEncoder(), new JsonEncoder());
+            $normalizers = array(new GetSetMethodNormalizer());
+            $serializer = new Serializer($normalizers, $encoders);
+
+            $jsonContent = $serializer->serialize($posts, 'json');
+
+            $response = new Response($jsonContent, 200);
+            return $response;
+
+        }
+
+
+    private function createPostArray(Post $post)
+    {
+        return array(
+            "id" => $post->getId(),
+            "postname" => $post->getNachricht()
+        );
+    }
+
+
 
 }
+
 
 
 

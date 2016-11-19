@@ -15,56 +15,77 @@ class __TwigTemplate_b30e6bc3a68958fe960b5ea65bb320e120836409f9b892af649474ba24d
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_e500359dab193c905ada598bcc7217dae45f8ace05d793def0f36e92ef64c6f3 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_e500359dab193c905ada598bcc7217dae45f8ace05d793def0f36e92ef64c6f3->enter($__internal_e500359dab193c905ada598bcc7217dae45f8ace05d793def0f36e92ef64c6f3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "::navigation.html.twig"));
+        $__internal_e6a59db25ac6279d773857e621541edb4902213c1afed5458a088bd561f5f2b8 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_e6a59db25ac6279d773857e621541edb4902213c1afed5458a088bd561f5f2b8->enter($__internal_e6a59db25ac6279d773857e621541edb4902213c1afed5458a088bd561f5f2b8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "::navigation.html.twig"));
 
         // line 1
         echo "
+
 
 <nav class=\"navbar navbar-light bg-faded\">
         <nav class=\"page-nav\">
             <ul class=\"nav navbar-nav\">
 
                     ";
-        // line 7
+        // line 8
         if ($this->env->getExtension('Symfony\Bridge\Twig\Extension\SecurityExtension')->isGranted("ROLE_USER")) {
-            // line 8
+            // line 9
             echo "                        <li class=\"nav-item active\">
                     <a class=\"nav-link\" href=\"";
-            // line 9
+            // line 10
             echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("logout");
             echo "\">Logout</a></li>
                         <li class=\"nav-item\"><a class=\"nav-link\" href=\"";
-            // line 10
+            // line 11
             echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("guestbook_einträgezeigen");
             echo "\">Einträge anzeigen</a></li>
                         <li class=\"nav-item\"><a class=\"nav-link\" href=\"";
-            // line 11
+            // line 12
             echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("guestbook_logged");
             echo "\">Eintrag schreiben</a></li>
+                        <div class=\"col-lg-6\">
+                            <div class=\"input-group\">
+                                <input type=\"text\" class=\"form-control\" id=\"suchfeld\" placeholder=\"Search for...\">
+                                <span class=\"input-group-btn\">
+        <button class=\"btn btn-secondary\" type=\"button\">Go!</button>
+      </span>
+                            </div>
+                        </div>
+                        <div id=\"sucheinhalt\"></div>
                 ";
         } else {
-            // line 13
+            // line 23
             echo "                    <li class=\"nav-item\"><a class=\"nav-link\" href=\"";
             echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("login");
             echo "\">Login</a></li>
                     <li class=\"nav-item\"><a class=\"nav-link\" href=\"";
-            // line 14
+            // line 24
             echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("user_registration");
             echo "\">Registrieren</a></li>
                 ";
         }
-        // line 16
+        // line 26
         echo "
 
 
 
                 </ul>
+
         </nav>
 </nav>
+
+<div id=\"sucheinhalt\"></div>
+<script type=\"text/javascript\" src=\"";
+        // line 36
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("lib/Javascript/Ajax.js"), "html", null, true);
+        echo "\"></script>
+
+
+
+
 ";
         
-        $__internal_e500359dab193c905ada598bcc7217dae45f8ace05d793def0f36e92ef64c6f3->leave($__internal_e500359dab193c905ada598bcc7217dae45f8ace05d793def0f36e92ef64c6f3_prof);
+        $__internal_e6a59db25ac6279d773857e621541edb4902213c1afed5458a088bd561f5f2b8->leave($__internal_e6a59db25ac6279d773857e621541edb4902213c1afed5458a088bd561f5f2b8_prof);
 
     }
 
@@ -80,7 +101,7 @@ class __TwigTemplate_b30e6bc3a68958fe960b5ea65bb320e120836409f9b892af649474ba24d
 
     public function getDebugInfo()
     {
-        return array (  58 => 16,  53 => 14,  48 => 13,  43 => 11,  39 => 10,  35 => 9,  32 => 8,  30 => 7,  22 => 1,);
+        return array (  80 => 36,  68 => 26,  63 => 24,  58 => 23,  44 => 12,  40 => 11,  36 => 10,  33 => 9,  31 => 8,  22 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -95,6 +116,7 @@ class __TwigTemplate_b30e6bc3a68958fe960b5ea65bb320e120836409f9b892af649474ba24d
     {
         return new Twig_Source("
 
+
 <nav class=\"navbar navbar-light bg-faded\">
         <nav class=\"page-nav\">
             <ul class=\"nav navbar-nav\">
@@ -104,6 +126,15 @@ class __TwigTemplate_b30e6bc3a68958fe960b5ea65bb320e120836409f9b892af649474ba24d
                     <a class=\"nav-link\" href=\"{{ path('logout') }}\">Logout</a></li>
                         <li class=\"nav-item\"><a class=\"nav-link\" href=\"{{ path('guestbook_einträgezeigen') }}\">Einträge anzeigen</a></li>
                         <li class=\"nav-item\"><a class=\"nav-link\" href=\"{{ path('guestbook_logged') }}\">Eintrag schreiben</a></li>
+                        <div class=\"col-lg-6\">
+                            <div class=\"input-group\">
+                                <input type=\"text\" class=\"form-control\" id=\"suchfeld\" placeholder=\"Search for...\">
+                                <span class=\"input-group-btn\">
+        <button class=\"btn btn-secondary\" type=\"button\">Go!</button>
+      </span>
+                            </div>
+                        </div>
+                        <div id=\"sucheinhalt\"></div>
                 {% else %}
                     <li class=\"nav-item\"><a class=\"nav-link\" href=\"{{ path('login') }}\">Login</a></li>
                     <li class=\"nav-item\"><a class=\"nav-link\" href=\"{{ path('user_registration') }}\">Registrieren</a></li>
@@ -113,8 +144,16 @@ class __TwigTemplate_b30e6bc3a68958fe960b5ea65bb320e120836409f9b892af649474ba24d
 
 
                 </ul>
+
         </nav>
 </nav>
+
+<div id=\"sucheinhalt\"></div>
+<script type=\"text/javascript\" src=\"{{ asset('lib/Javascript/Ajax.js') }}\"></script>
+
+
+
+
 ", "::navigation.html.twig", "/Users/lilikovac/Documents/WT3_App/my_project/app/Resources/views/navigation.html.twig");
     }
 }

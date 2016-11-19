@@ -16,8 +16,8 @@ class __TwigTemplate_f243961f0d1795e1f607144d33fe216470f2ab2022cb7c6751d218a2f97
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_25dab35b604337332f5bc2742fa1fc4281989e97b00a7feeebb2d66636e6853a = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_25dab35b604337332f5bc2742fa1fc4281989e97b00a7feeebb2d66636e6853a->enter($__internal_25dab35b604337332f5bc2742fa1fc4281989e97b00a7feeebb2d66636e6853a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "security/login.html.twig"));
+        $__internal_b19ea4188622037a41351556d2180749713cc000356cefb189d9f7ef6a71aae2 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_b19ea4188622037a41351556d2180749713cc000356cefb189d9f7ef6a71aae2->enter($__internal_b19ea4188622037a41351556d2180749713cc000356cefb189d9f7ef6a71aae2_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "security/login.html.twig"));
 
         // line 23
         echo "
@@ -29,14 +29,14 @@ class __TwigTemplate_f243961f0d1795e1f607144d33fe216470f2ab2022cb7c6751d218a2f97
         // line 26
         $this->displayBlock('body', $context, $blocks);
         
-        $__internal_25dab35b604337332f5bc2742fa1fc4281989e97b00a7feeebb2d66636e6853a->leave($__internal_25dab35b604337332f5bc2742fa1fc4281989e97b00a7feeebb2d66636e6853a_prof);
+        $__internal_b19ea4188622037a41351556d2180749713cc000356cefb189d9f7ef6a71aae2->leave($__internal_b19ea4188622037a41351556d2180749713cc000356cefb189d9f7ef6a71aae2_prof);
 
     }
 
     public function block_body($context, array $blocks = array())
     {
-        $__internal_94ac7ad8e6aa432421f0081dd223971bd8ffdcb913729d0e174268e97191f11e = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_94ac7ad8e6aa432421f0081dd223971bd8ffdcb913729d0e174268e97191f11e->enter($__internal_94ac7ad8e6aa432421f0081dd223971bd8ffdcb913729d0e174268e97191f11e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "security/login.html.twig"));
+        $__internal_0dc6f489ed8b4a0b578a2036c177eb729482305d72a277b529c3868874cff8e6 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_0dc6f489ed8b4a0b578a2036c177eb729482305d72a277b529c3868874cff8e6->enter($__internal_0dc6f489ed8b4a0b578a2036c177eb729482305d72a277b529c3868874cff8e6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "security/login.html.twig"));
 
         // line 27
         echo "    <div class=\"container\">
@@ -67,9 +67,8 @@ class __TwigTemplate_f243961f0d1795e1f607144d33fe216470f2ab2022cb7c6751d218a2f97
         // line 38
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "_password", array()), 'row');
         echo "
-                <button type=\"submit\" class=\"btn btn-success\">Login <span class=\"fa fa-lock\"></span></button>
                 ";
-        // line 40
+        // line 39
         echo         $this->env->getExtension('Symfony\Bridge\Twig\Extension\FormExtension')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_end');
         echo "
             </div>
@@ -77,7 +76,7 @@ class __TwigTemplate_f243961f0d1795e1f607144d33fe216470f2ab2022cb7c6751d218a2f97
     </div>
 ";
         
-        $__internal_94ac7ad8e6aa432421f0081dd223971bd8ffdcb913729d0e174268e97191f11e->leave($__internal_94ac7ad8e6aa432421f0081dd223971bd8ffdcb913729d0e174268e97191f11e_prof);
+        $__internal_0dc6f489ed8b4a0b578a2036c177eb729482305d72a277b529c3868874cff8e6->leave($__internal_0dc6f489ed8b4a0b578a2036c177eb729482305d72a277b529c3868874cff8e6_prof);
 
     }
 
@@ -93,7 +92,7 @@ class __TwigTemplate_f243961f0d1795e1f607144d33fe216470f2ab2022cb7c6751d218a2f97
 
     public function getDebugInfo()
     {
-        return array (  73 => 40,  68 => 38,  64 => 37,  59 => 36,  53 => 33,  50 => 32,  48 => 31,  42 => 27,  30 => 26,  28 => 25,  26 => 24,  23 => 23,);
+        return array (  72 => 39,  68 => 38,  64 => 37,  59 => 36,  53 => 33,  50 => 32,  48 => 31,  42 => 27,  30 => 26,  28 => 25,  26 => 24,  23 => 23,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -144,7 +143,6 @@ class __TwigTemplate_f243961f0d1795e1f607144d33fe216470f2ab2022cb7c6751d218a2f97
                 {{ form_start(form) }}
                 {{ form_row(form._username) }}
                 {{ form_row(form._password) }}
-                <button type=\"submit\" class=\"btn btn-success\">Login <span class=\"fa fa-lock\"></span></button>
                 {{ form_end(form) }}
             </div>
         </div>

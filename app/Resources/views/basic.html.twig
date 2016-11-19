@@ -2,7 +2,15 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% if is_granted('ROLE_USER') %}
+
+        <title>Sie sind eingeloggt!</title>
+    {% else %}
+        <title>Welcome!</title>
+
+    {% endif %}
+
+
     {% block stylesheets %}
 
     <link rel="stylesheet" type="text/css" href="{{ asset('lib/bootstrap/css/bootstrap.css') }}">

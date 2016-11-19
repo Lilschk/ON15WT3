@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8"/>
-    <title>{% block title %}Welcome!{% endblock %}</title>
-    {% include '::basic.html.twig' %}
-    <script type="text/javascript" src="{{ asset('lib/Javascript/Sort.js') }}"></script>
-</head>
+
+{% include '::basic.html.twig' %}
+
 {% include '::navigation.html.twig' %}
 
-<table class="table sortierbar">
+<table class="table">
     <thead>
     <tr>
         <th>Name</th>
@@ -49,40 +44,10 @@
                 </div>
             </div>
 
-            {#<div class="modal fade" id="exampleModal{{ event.id }}" tabindex="-1" role="dialog">#}
-                {#<div class="modal-dialog" role="document">#}
-                    {#<div class="modal-content">#}
-                        {#<div class="modal-header">#}
-                            {#<button type="button" class="close" data-dismiss="modal">&times;</button>#}
-                            {#<h4 class="modal-title" id="exampleModalLabel">Nachricht bearbeiten</h4>#}
-                        {#</div>#}
-                        {#<div class="modal-body">#}
-                            {#<form>#}
-                                {#<div class="form-group">#}
-                                    {#<label for="recipient-name" class="control-label">Name</label>#}
-                                    {#<input type="text" class="form-control" id="recipient-name" value="{{ event.name }}">#}
-                                {#</div>#}
-                                {#<div class="form-group">#}
-                                    {#<label for="message-text" class="control-label">E-Mail</label>#}
-                                    {#<textarea class="form-control" id="message-text">{{ event.Mail }}</textarea>#}
-                                {#</div>#}
-                                {#<div class="form-group">#}
-                                    {#<label for="message-text" class="control-label">Nachricht</label>#}
-                                    {#<textarea class="form-control" id="message-text">{{ event.Nachricht }}</textarea>#}
-                                {#</div>#}
-                            {#</form>#}
-                        {#</div>#}
-                        {#<div class="modal-footer">#}
-                            {#<button type="submit" class="btn btn-primary">Update</button>#}
-                        {#</div>#}
-                    {#</div>#}
-                {#</div>#}
-            {#</div>#}
-        {#</tr>#}
-
-
     {% endfor %}
     </tbody>
     </table>
 
 
+
+}

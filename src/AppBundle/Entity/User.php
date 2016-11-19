@@ -55,8 +55,7 @@ private $isActive;
 public function __construct()
 {
 $this->isActive = true;
-// may not be needed, see section on salt below
-// $this->salt = md5(uniqid(null, true));
+
 }
 
 public function getUsername()
@@ -92,8 +91,7 @@ return serialize(array(
 $this->id,
 $this->username,
 $this->password,
-// see section on salt below
-// $this->salt,
+
 ));
 }
 
@@ -104,8 +102,7 @@ list (
 $this->id,
 $this->username,
 $this->password,
-// see section on salt below
-// $this->salt
+
 ) = unserialize($serialized);
 }
 

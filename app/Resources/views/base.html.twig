@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+
         {%  include '::basic.html.twig' %}
-    </head>
+
 
     <body>
         {% include '::navigation.html.twig' %}
@@ -20,13 +16,3 @@
                     {% block body %}{% endblock %}
 
 
-        <footer class="page-footer">
-
-            <p>
-                <a href="#">Back to top</a>
-            </p>
-        </footer>
-
-        {% block javascripts %}{% endblock %}
-    </body>
-</html>

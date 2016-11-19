@@ -1,5 +1,6 @@
 
 
+
 <nav class="navbar navbar-light bg-faded">
         <nav class="page-nav">
             <ul class="nav navbar-nav">
@@ -9,6 +10,15 @@
                     <a class="nav-link" href="{{ path('logout') }}">Logout</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ path('guestbook_einträgezeigen') }}">Einträge anzeigen</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ path('guestbook_logged') }}">Eintrag schreiben</a></li>
+                        <div class="col-lg-6">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="suchfeld" placeholder="Search for...">
+                                <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button">Go!</button>
+      </span>
+                            </div>
+                        </div>
+                        <div id="sucheinhalt"></div>
                 {% else %}
                     <li class="nav-item"><a class="nav-link" href="{{ path('login') }}">Login</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ path('user_registration') }}">Registrieren</a></li>
@@ -18,5 +28,13 @@
 
 
                 </ul>
+
         </nav>
 </nav>
+
+<div id="sucheinhalt"></div>
+<script type="text/javascript" src="{{ asset('lib/Javascript/Ajax.js') }}"></script>
+
+
+
+
