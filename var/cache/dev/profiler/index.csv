@@ -5622,3 +5622,17 @@ a4a24e,127.0.0.1,POST,http://localhost:8000/livesearch,1479560756,,200
 bf4814,127.0.0.1,POST,http://localhost:8000/livesearch,1479560758,,200
 77c482,127.0.0.1,POST,http://localhost:8000/livesearch,1479560758,,200
 614772,127.0.0.1,POST,http://localhost:8000/livesearch,1479560758,,200
+792ed6,127.0.0.1,GET,http://localhost:8000/,1479560865,,200
+620cb6,127.0.0.1,GET,http://localhost:8000/apple-touch-icon-precomposed.png,1479560866,afd636,200
+afd636,127.0.0.1,GET,http://localhost:8000/apple-touch-icon-precomposed.png,1479560866,,404
+2f7ff2,127.0.0.1,GET,http://localhost:8000/login,1479560872,,200
+e05fec,127.0.0.1,POST,http://localhost:8000/login,1479560878,,302
+006784,127.0.0.1,GET,http://localhost:8000/login/loggedin,1479560879,,200
+6c4869,127.0.0.1,POST,http://localhost:8000/livesearch,1479560883,,200
+276beb,127.0.0.1,POST,http://localhost:8000/livesearch,1479560883,,200
+ecf337,127.0.0.1,POST,http://localhost:8000/livesearch,1479560884,,200
+8e844c,127.0.0.1,POST,http://localhost:8000/livesearch,1479560886,,200
+9668c7,127.0.0.1,POST,http://localhost:8000/livesearch,1479560886,,200
+874184,127.0.0.1,GET,http://localhost:8000/logout,1479560903,,302
+754fc3,127.0.0.1,GET,http://localhost:8000/,1479560903,,200
+907020,192.168.33.1,GET,http://192.168.33.10/my_project/web/app_dev.php/,1479637477,,200
